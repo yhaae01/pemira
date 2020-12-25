@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 25, 2020 at 02:03 AM
--- Server version: 5.7.24
--- PHP Version: 7.4.8
+-- Host: 127.0.0.1
+-- Generation Time: Jun 16, 2020 at 07:03 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -62,7 +63,7 @@ CREATE TABLE `tb_calon` (
 INSERT INTO `tb_calon` (`id`, `namacalon`, `visi`, `misi`, `foto`, `totalsuara`) VALUES
 ('5e634550d4aec', 'Indah Chaesarawati', 'Menjadikan Keluarga BEM UBSI Bogor Sebagai Lembaga Yang Sinergis, Berkualitas, Unggul Dan Inovasi', '1. Mewujudkan BEM UBSI Bogor Sebagai wadah utama mengalang aspirasi mahasiswa, oleh mahasiswa dan untuk mahasiswa\r\n2. Melahirkan Mahasiswa yang aktif, solutif dan kreatif dalam mengelola isu srategis\r', '5e634550d4aec.jpg', 0),
 ('5e654149db756', 'Thifal Pratama sanjaya', 'Terbentuknya BEM UBSI Bogor yang berkolaborasi aktif, dan bersinergi. Demi terwujud nya lingkungan k', '1.Membangun hubungan harmonis antar elemen baik internal maupun eksternal kampus\r\n2. Mendorong pengalaman tridharma perguruan tinggi\r\n3. Mengoptimalkan fungsi advokasi mahasiswa\r\n4. Menciptakan lingku', '5e654149db756.jpg', 0),
-('5fe318cb28903', 'Sueb', 'Maju Terus', 'Gasken', '5fe318cb28903.jpg', 0);
+('5e654248cb5e4', 'Elis Setiawati', 'Mewujudkan aspirasi mahasiswa dan juga membantu mewujudkan generasi muda yang aktif inovatif dan per', '1. Mengadakan kegiatan rutin bakti sosial\r\n2. Menciptakan kegiatan program yang bersifat kegiatan keterampilan(kulikuler & ekstrakulikuler)\r\n3. Menciptakan kegiatan bermanfaat di luar jam kuliah (bela', '5e654248cb5e4.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -96,6 +97,7 @@ CREATE TABLE `tb_siswa` (
   `nis` varchar(11) NOT NULL,
   `password` varchar(50) NOT NULL,
   `namasiswa` varchar(50) NOT NULL,
+  `kelas` varchar(20) NOT NULL,
   `suara` varchar(255) NOT NULL,
   `absen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -104,9 +106,10 @@ CREATE TABLE `tb_siswa` (
 -- Dumping data for table `tb_siswa`
 --
 
-INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `suara`, `absen`) VALUES
-('5fe2d6722f4d3', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '0', '0'),
-('5fe5474ba2aa4', '12180310', '8de13959395270bf9d6819f818ab1a00', 'ahmad maulana', '0', '0');
+INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `kelas`, `suara`, `absen`) VALUES
+('5e5fbe3461213', '12170596', 'c20ad4d76fe97759aa27a0c99bff6710', 'fariz andifa', '12.2B.13', '0', '5e5fbe3461213'),
+('5e60f42ceacaf', '12182186', 'c20ad4d76fe97759aa27a0c99bff6710', 'via', '12.2C.13', '0', '5e60f42ceacaf'),
+('5e6f0dc1aaec7', '12192505', 'c20ad4d76fe97759aa27a0c99bff6710', 'Lucky Nursarastri', '11.2B.13', '0', '5e6f0dc1aaec7');
 
 --
 -- Indexes for dumped tables

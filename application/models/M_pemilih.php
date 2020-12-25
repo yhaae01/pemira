@@ -2,11 +2,10 @@
 
 class M_pemilih extends CI_Model{
 
-      function show_pemilih(){
-            $hasil=$this->db->query("SELECT * FROM tb_siswa");
-            return $hasil;
-      }  
-
+	function show_pemilih(){
+		$hasil=$this->db->query("SELECT * FROM tb_siswa");
+		return $hasil;
+	}  
 
 	function insert_data(){
 		$field = array(
@@ -14,11 +13,11 @@ class M_pemilih extends CI_Model{
 			'nis' => $this->input->post('nis'),
 			'password' => md5($this->input->post('password')),
 			'namasiswa' => $this->input->post('nama'),
-			'kelas' => $this->input->post('kelas'),
+			// 'kelas' => $this->input->post('kelas'),
 			'suara' => '0',
 			'absen' => '0'
-
 		);
+
 		$this->db->insert('tb_siswa',$field);
 		if ($this->db->affected_rows()>0) {
 			return true;
@@ -51,6 +50,7 @@ class M_pemilih extends CI_Model{
 			return false;
 		}
 	}	
+
 	public function truncate(){
 		$this->db->query('TRUNCATE TABLE tb_siswa');
 
@@ -66,11 +66,12 @@ class M_pemilih extends CI_Model{
 			return false;
 		}
 	}
+
 	public function editsiswa($id){
 		$this->db->where('id',$id);
 		$field = array(
 			'namasiswa' => $this->input->post('nama'),
-			'kelas' => $this->input->post('kelas'),
+			// 'kelas' => $this->input->post('kelas'),
 		);
 		$this->db->update('tb_siswa',$field);
 
@@ -79,8 +80,8 @@ class M_pemilih extends CI_Model{
 		}else{
 			return false;
 		}
-
 	}
+
 	public function editabsen($id){
 		$pengaw=$this->session->userdata('id');
         $field = array(
@@ -95,8 +96,8 @@ class M_pemilih extends CI_Model{
 		}else{
 			return false;
 		}
-
 	}
+
 	public function editabsenbatal($id){
 		$this->db->where('id',$id);
 		$field = array(
@@ -109,8 +110,8 @@ class M_pemilih extends CI_Model{
 		}else{
 			return false;
 		}
-
 	}
+
 	public function reset($id){
 
 		$hasil=$this->db->query("SELECT suara  FROM tb_siswa where id='$id'");
