@@ -77,7 +77,7 @@ if($login=='loginadmin'){
                     <li class="list-group-item">
                         <center>
                         <h1>
-                            <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?php echo base_url('upload/'.$foto)?>">
+                            <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?php echo base_url('assets/img/calon/'.$foto)?>">
                         </h1>
                         </center><br>
                         <div>
@@ -155,7 +155,7 @@ foreach($data->result_array() as $i):
 <div class="modal fade" id="pilih<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form action="<?php echo base_url('index.php/form/pilih/'.$id);?>" method="post">
+            <form action="<?php echo base_url('form/pilih/'.$id);?>" method="post">
                 <div class="modal-body">
 
                     <div class="card-header user-header alt bg-dark">
