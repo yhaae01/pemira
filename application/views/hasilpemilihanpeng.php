@@ -53,7 +53,7 @@ if($login=='loginpengawas'){
                 </div> 
             </div>
             <div style="position: fixed;right: 30px; top: 10px;">
-                    <a class="btn btn-outline-primary" style="" data-toggle="modal" data-target="#konfirmkeluar">Keluar</a>
+                    <a class="btn btn-outline-primary" data-toggle="modal" data-target="#konfirmkeluar">Keluar</a>
             </div>
         </header><!-- /header -->
         <!-- Header-->
