@@ -1,4 +1,19 @@
-<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+<footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Copyright &copy; BEM UBSI BOGOR <?php echo date('Y'); ?>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /#right-panel -->
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>

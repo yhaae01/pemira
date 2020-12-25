@@ -3,8 +3,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
 
-    <link rel="apple-touch-icon" href="images/BEM UBSI BOGOR.png">
-    <link rel="shortcut icon" href="images/BEM UBSI BOGOR.png">
+    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="assets/img/bem-logo.png">
 
     <link rel="stylesheet" href="<?php  echo base_url('assets/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php  echo base_url('assets/css/bootstrap.min.css'); ?>">
@@ -136,48 +136,6 @@ if($login=='loginadmin'){
                 </div>
         </div> <!-- .content -->
         <div class="clearfix"></div>
-
-<!--Modal Keluar -->
-<!-- <div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
-                </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('index.php/Welcome/logout'); ?>">
-                    <input type="submit" class="btn btn-primary" value="Ya">
-                </form>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!--Modal Grafik -->
-<!-- <div class="modal fade" id="lihatgrafik" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="largeModalLabel"><center>Hasil Pemilihan</center></h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-                            <h4 class="mb-3"> </h4>
-                            <canvas id="doughutChart" height="300" width="601" class="chartjs-render-monitor" style="display: block; width: 601px; height: 300px;"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <br>
 <footer class="site-footer">

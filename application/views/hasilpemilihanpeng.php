@@ -1,15 +1,10 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
     
-    <link rel="apple-touch-icon" href="images/BEM UBSI BOGOR.png">
-    <link rel="shortcut icon" href="images/BEM UBSI BOGOR.png">
+    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="assets/img/bem-logo.png">
 
     <link rel="stylesheet" href="<?=base_url()?>assets/css/normalize.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
@@ -64,7 +59,7 @@ if($login=='loginpengawas'){
         <!-- Header-->
     </div>
         
-  <div class="content pb-0">
+<div class="content pb-0">
 
     
             
@@ -78,9 +73,9 @@ if($login=='loginpengawas'){
 
         <?php $nototal=0;$belummemilih=0;$sudahmemilih=0;$sudahabsen=0;$belumabsen=0;$sudahabsenbelummilih=0;
             foreach($datapemilih->result_array() as $j):
-                    $id=$j['id'];
-                  $suara=$j['suara'];
-                  $absen=$j['absen'];
+            $id=$j['id'];
+            $suara=$j['suara'];
+            $absen=$j['absen'];
             if ($suara!=0) {
                 $sudahmemilih++;
             }
@@ -103,24 +98,24 @@ if($login=='loginpengawas'){
         <hr> 
         <div class="container">
             <div class="row">
-              <div class="col-4"> DPT : <?php echo $nototal; ?> <br> Sudah absen belum memilih : <?php echo $sudahabsenbelummilih; ?> </div>
-              <div class="col-4 text-center"> Sudah Memilih : <?php echo $sudahmemilih; ?><br>Sudah Absen : <?php echo $sudahabsen; ?></div>
-              <div class="col-4 text-right"> Belum Memilih : <?php echo $belummemilih; ?><br>Belum Absen : <?php echo $belumabsen; ?></div>
-          </div>
+                <div class="col-4"> DPT : <?php echo $nototal; ?> <br> Sudah absen belum memilih : <?php echo $sudahabsenbelummilih; ?> </div>
+                <div class="col-4 text-center"> Sudah Memilih : <?php echo $sudahmemilih; ?><br>Sudah Absen : <?php echo $sudahabsen; ?></div>
+                <div class="col-4 text-right"> Belum Memilih : <?php echo $belummemilih; ?><br>Belum Absen : <?php echo $belumabsen; ?></div>
+            </div>
         </div>
         <hr>
 
                 <div class="row">
 
                     <?php $no=1;
-                        foreach($data->result_array() as $i):
-                                $id=$i['id'];
-                              $visi=$i['visi'];
-                              $misi=$i['misi']; 
-                              $namacalon=$i['namacalon']; 
-                              $foto=$i['foto']; 
-                              $totalsuara=$i['totalsuara'];        
-                  ?>
+                    foreach($data->result_array() as $i):
+                            $id=$i['id'];
+                            $visi=$i['visi'];
+                            $misi=$i['misi']; 
+                            $namacalon=$i['namacalon']; 
+                            $foto=$i['foto']; 
+                            $totalsuara=$i['totalsuara'];        
+                    ?>
                     <div class="col-md-4">
                         <aside class="profile-nav alt">
                             <section class="card">
@@ -162,40 +157,37 @@ if($login=='loginpengawas'){
 
 
 <!--Modal Keluar -->
-       <div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-                <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
-                        </div>
-                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                        <form  action="<?php echo base_url('Welcome/logout'); ?>">
-                        <input type="submit" class="btn btn-primary" value="Ya">
-                    </form>
-                    </div>
+<div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
                 </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                <form  action="<?php echo base_url('Welcome/logout'); ?>">
+                <input type="submit" class="btn btn-primary" value="Ya">
+            </form>
             </div>
         </div>
+    </div>
 </div>
-      
+</div>
+
 <br>
         <footer class="site-footer">
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-              
                     </div>
                     <div class="col-sm-6 text-right">
-                       Copyright &copy; BEM UBSI BOGOR
+                        Copyright &copy; BEM UBSI BOGOR
                     </div>
                 </div>
             </div>
         </footer>
 
     </div><!-- /#right-panel -->
-
-           
 
     <script src="<?=base_url()?>assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="<?=base_url()?>assets/js/popper.min.js"></script>
@@ -231,17 +223,6 @@ if($login=='loginpengawas'){
         $('.dataku').DataTable();
     });
 	</script>
-
-
-
-
-<div id="container">
-  
- 
-  
-</div>
-
-
 
 </body>
 </html>

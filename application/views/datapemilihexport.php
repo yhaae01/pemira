@@ -5,8 +5,8 @@
     <meta name="description" content="Mumbool.com | Created By Josystem, Must Hasan">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="images/favicon.png">
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="assets/img/bem-logo.png">
 
     <link rel="stylesheet" href="<?php  echo base_url('assets/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php  echo base_url('assets/css/bootstrap.min.css'); ?>">
