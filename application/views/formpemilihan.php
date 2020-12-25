@@ -125,7 +125,7 @@ foreach($data->result_array() as $i):
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-4">
-                                    <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?php echo base_url('upload/'.$foto)?>">
+                                    <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?php echo base_url('assets/img/calon/'.$foto)?>">
                                     </div>
                                     <div class="col">
                                         </h1>
