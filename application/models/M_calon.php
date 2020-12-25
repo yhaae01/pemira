@@ -8,14 +8,12 @@ class M_calon extends CI_Model{
     public $namacalon;
 	public $visi;
 	public $misi;
-    public $foto = "default.jpg";
+    public $foto = "default.png";
 	
 	function show_calon(){
-
 		$hasil=$this->db->query("SELECT * FROM tb_calon");
 		return $hasil;
-
-	}   
+	} 
 	
 	function insert_data(){
 		$post = $this->input->post();
@@ -26,40 +24,6 @@ class M_calon extends CI_Model{
         $this->foto = $this->_uploadImage();
         $this->db->insert('tb_calon', $this);
 		if ($this->db->affected_rows()>0) {
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	public function deletecalon($id){
-		$hasil=$this->db->query("SELECT *  FROM tb_siswa");
-		foreach($hasil->result_array() as $i):
-								$r=$i['id'];
-                                $k=$i['suara'];
-        if ($k==$id) {
-        	$this->db->query("UPDATE tb_siswa set suara='0' where id='$r'");
-        };
-		endforeach;
-
-		$this->db->where('id',$id);
-		$this->db->delete('tb_calon');
-		// $this->_deleteImage($id);
-		if($this->db->affected_rows()>0){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	public function truncate(){
-		$hasil=$this->db->query("SELECT *  FROM tb_siswa");
-		foreach($hasil->result_array() as $i):
-                                $b=$i['id'];
-        $this->db->query("UPDATE tb_siswa set suara='0' where id='$b'");
-        endforeach;
-
-		$this->db->query('TRUNCATE TABLE tb_calon');
-		if($this->db->affected_rows()>0){
 			return true;
 		}else{
 			return false;
@@ -77,19 +41,71 @@ class M_calon extends CI_Model{
 			$this->foto = $this->_uploadImage();
 		} else {
 			$this->foto = $post["old_image"];
-		};
+		}
 		$this->db->update('tb_calon', $this);
 		if ($this->db->affected_rows()>0) {
 			return true;
 		}else{
 			return false;
 		}
+	}
 
+	private function _uploadImage()
+	{
+		$config['upload_path']          = './assets/img/calon/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['file_name']            = $this->id;
+		$config['overwrite']			= true;
+		// $config['max_size']             = 1024; // 1MB
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('upfoto')) {
+        return $this->upload->data("file_name");
+    }
+    
+    return "default.png";
+	}
+
+	public function deletecalon($id){
+		$hasil=$this->db->query("SELECT * FROM tb_siswa");
+		foreach($hasil->result_array() as $i):
+								$r=$i['id'];
+                                $k=$i['suara'];
+        if ($k==$id) {
+        	$this->db->query("UPDATE tb_siswa set suara='0' where id='$r'");
+        };
+		endforeach;
+
+		$this->db->where('id',$id);
+		$this->db->delete('tb_calon');
+		// $this->_deleteImage($id);
+		if($this->db->affected_rows()>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function truncate(){
+		$hasil=$this->db->query("SELECT * FROM tb_siswa");
+		foreach($hasil->result_array() as $i):
+                                $b=$i['id'];
+        $this->db->query("UPDATE tb_siswa set suara='0' where id='$b'");
+        endforeach;
+
+		$this->db->query('TRUNCATE TABLE tb_calon');
+		if($this->db->affected_rows()>0){
+			return true;
+		}else{
+			return false;
+		}
 	} 
 
 	public function pilihcalon($id){
-
-		$hasil=$this->db->query("SELECT totalsuara FROM tb_calon where id='$id'");
+		$hasil=$this->db->query("SELECT totalsuara  FROM tb_calon where id='$id'");
 		foreach($hasil->result_array() as $i):
                                 $k=$i['totalsuara'];
                                 $k=$k+1;
@@ -108,26 +124,5 @@ class M_calon extends CI_Model{
 		}else{
 			return false;
 		}
-
 	}
-
-	private function _uploadImage()
-	{
-		$config['upload_path']          = './assets/img/calon/';
-		$config['allowed_types']        = 'gif|jpg|png';
-		$config['file_name']            = $this->id;
-		$config['overwrite']			= true;
-		$config['max_size']             = 1024; // 1MB
-    	// $config['max_width']            = 1024;
-    	// $config['max_height']           = 768;
-
-    $this->load->library('upload', $config);
-
-    if ($this->upload->do_upload('upfoto')) {
-        return $this->upload->data("file_name");
-    }
-    
-    return "default.jpg";
-	}
-
 }
