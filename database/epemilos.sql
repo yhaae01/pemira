@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 25, 2020 at 02:03 AM
+-- Generation Time: Dec 25, 2020 at 11:50 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.8
 
@@ -49,8 +49,8 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 CREATE TABLE `tb_calon` (
   `id` varchar(50) NOT NULL,
   `namacalon` varchar(50) NOT NULL,
-  `visi` varchar(100) NOT NULL,
-  `misi` varchar(200) NOT NULL,
+  `visi` varchar(256) NOT NULL,
+  `misi` varchar(256) NOT NULL,
   `foto` varchar(50) NOT NULL,
   `totalsuara` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -60,9 +60,9 @@ CREATE TABLE `tb_calon` (
 --
 
 INSERT INTO `tb_calon` (`id`, `namacalon`, `visi`, `misi`, `foto`, `totalsuara`) VALUES
-('5e634550d4aec', 'Indah Chaesarawati', 'Menjadikan Keluarga BEM UBSI Bogor Sebagai Lembaga Yang Sinergis, Berkualitas, Unggul Dan Inovasi', '1. Mewujudkan BEM UBSI Bogor Sebagai wadah utama mengalang aspirasi mahasiswa, oleh mahasiswa dan untuk mahasiswa\r\n2. Melahirkan Mahasiswa yang aktif, solutif dan kreatif dalam mengelola isu srategis\r', '5e634550d4aec.jpg', 0),
-('5e654149db756', 'Thifal Pratama sanjaya', 'Terbentuknya BEM UBSI Bogor yang berkolaborasi aktif, dan bersinergi. Demi terwujud nya lingkungan k', '1.Membangun hubungan harmonis antar elemen baik internal maupun eksternal kampus\r\n2. Mendorong pengalaman tridharma perguruan tinggi\r\n3. Mengoptimalkan fungsi advokasi mahasiswa\r\n4. Menciptakan lingku', '5e654149db756.jpg', 0),
-('5fe318cb28903', 'Sueb', 'Maju Terus', 'Gasken', '5fe318cb28903.jpg', 0);
+('5fe5b717afa03', 'Indah Chaesarawati', '<p>Menjadikan Keluarga BEM UBSI Bogor Sebagai Lembaga Yang Sinergis, Berkualitas, Unggul Dan Inovasi', '<p>1. Mewujudkan BEM UBSI Bogor Sebagai wadah utama mengalang aspirasi mahasiswa, oleh mahasiswa dan untuk mahasiswa</p><p>2. Melahirkan Mahasiswa yang aktif, solutif dan kreatif dalam mengelola isu s', '5fe5b717afa03.jpg', 0),
+('5fe5b7414a33e', 'Thifal Pratama sanjaya', '<p>Terbentuknya BEM UBSI Bogor yang berkolaborasi aktif, dan bersinergi. Demi terwujud nya lingkunga', '<p>1.Membangun hubungan harmonis antar elemen baik internal maupun eksternal kampus\\</p><p>2. Mendorong pengalaman tridharma perguruan tinggi</p><p>3. Mengoptimalkan fungsi advokasi mahasiswa</p><p>4.', '5fe5b7414a33e.jpg', 0),
+('5fe5b76b4ff33', 'Elis Setiawati', '<p>Mewujudkan aspirasi mahasiswa dan juga membantu mewujudkan generasi muda yang aktif inovatif dan ', '<p>1. Mengadakan kegiatan rutin bakti sosial</p><p>2. Menciptakan kegiatan program yang bersifat kegiatan keterampilan(kulikuler &amp; ekstrakulikuler)</p><p>3. Menciptakan kegiatan bermanfaat di luar', '5fe5b76b4ff33.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -105,8 +105,7 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `suara`, `absen`) VALUES
-('5fe2d6722f4d3', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '0', '0'),
-('5fe5474ba2aa4', '12180310', '8de13959395270bf9d6819f818ab1a00', 'ahmad maulana', '0', '0');
+('5fe591340e9f8', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '', '');
 
 --
 -- Indexes for dumped tables
