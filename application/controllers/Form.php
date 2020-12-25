@@ -13,8 +13,10 @@ class Form extends CI_Controller {
 		$x['data']=$this->mc->show_calon();
 		$this->load->view('formpemilihan',$x);
 	}
+	
 	public function pilih($id){
 		$result=$this->mc->pilihcalon($id);
+		session_destroy();
 		redirect(base_url("?pesan=terimakasih"));
 	}
 }
