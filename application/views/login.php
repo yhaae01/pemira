@@ -3,8 +3,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR | Login</title>
 
-    <link rel="apple-touch-icon" href="images/BEM UBSI BOGOR.png">
-    <link rel="shortcut icon" href="images/BEM UBSI BOGOR.png"> 
+    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="assets/img/bem-logo.png"> 
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
