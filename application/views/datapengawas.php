@@ -30,7 +30,7 @@
                     <th>No</th>
                     <th>Username</th>
                     <th>Nama Pengawas</th>
-                    <th width="150"><button class="btn btn-danger" data-toggle="modal" data-target="#truncate" >Kosongkan</button></th>
+                    <th width="150"><button class="btn btn-danger btn-block btn-sm" data-toggle="modal" data-target="#truncate" >Kosongkan</button></th>
                 </tr>
             </thead>
             <tbody>
@@ -60,7 +60,7 @@
 
 <!--Modal tambah-->
 <div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="smallmodalLabel"></h5>
@@ -112,7 +112,7 @@ foreach($data->result_array() as $i):
 
 ?>
 <div class="modal fade" id="editdata<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="smallmodalLabel"></h5>
