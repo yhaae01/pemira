@@ -56,22 +56,22 @@
                     <td style="text-align: center;"><?php
                         if ($absen=='0') {
                             ?>
-                                <button type="button" class="btn btn-warning">Belum Absen</button>
-                            <?php
+                                <span class="badge badge-warning">Belum Absen</span>
+                                <?php
                         }else{
                             ?>
-                                <button type="button" class="btn btn-success">Telah Absen</button>
+                                <span class="badge badge-success">Telah Absen</span>
                             <?php
                         };
                     ?> </td>
                     <td style="text-align: center;"><?php
                         if ($suara=='0') {
                             ?>
-                                <button type="button" class="btn btn-warning">Belum Memilih</button>
-                            <?php
+                                <span class="badge badge-warning">Belum Memilih</span>
+                                <?php
                         }else{
                             ?>
-                                <button type="button" class="btn btn-success">Telah Memilih</button>
+                                <span class="badge badge-success">Telah Memilih</span>
                             <?php
                         };
                     ?> </td>
@@ -124,20 +124,6 @@
                             <input type="text" id="nama" name="nama" placeholder="Nama . . ."  class="form-control">
                         </div>
                     </div>
-
-                    <!-- <div class="row form-group">
-                        <div class="col col-md-3"><label for="disabledSelect" class=" form-control-label">Kelas</label></div>
-                        <div class="col-12 col-md-9">
-                            <select name="kelas" id="kelas" class="form-control">
-                                <option value="11.2A.13">11.2A.13</option>
-                                <option value="11.2B.13">11.2B.13</option>
-                                <option value="12.2A.13">12.2A.13</option>
-                                <option value="12.2B.13">12.2B.13</option>
-                                <option value="12.2C.13">12.2C.13</option>
-                                <option value="12.2D.13">12.2D.13</option>
-                            </select>
-                        </div>
-                    </div> -->
                 </div>
                 
                 <div class="modal-footer">
@@ -188,20 +174,6 @@
                         <div class="col-12 col-md-9">
                             <input type="text" id="nama" name="nama" placeholder="Nama . . ."  class="form-control" value="<?php echo $namasiswa; ?>"></div>
                     </div>
-
-                    <!-- <div class="row form-group">
-                        <div class="col col-md-3"><label for="disabledSelect" class=" form-control-label">Kelas</label></div>
-                        <div class="col-12 col-md-9">
-                            <select name="kelas" id="kelas" class="form-control">
-                                <option value="X RPL 1">X RPL 1</option>
-                                <option value="X RPL 2">X RPL 2</option>
-                                <option value="XI RPL 1">XI RPL 1</option>
-                                <option value="XI RPL 2">XI RPL 2</option>
-                                <option value="XII RPL 1">XII RPL 1</option>
-                                <option value="XII RPL 2">XII RPL 2</option>
-                            </select>
-                        </div>
-                    </div> -->
                 </div>
             
                 <div class="modal-footer">
