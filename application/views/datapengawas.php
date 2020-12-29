@@ -29,7 +29,6 @@
                 <tr>
                     <th>No</th>
                     <th>Username</th>
-                    <th>Password</th>
                     <th>Nama Pengawas</th>
                     <th width="150"><button class="btn btn-danger" data-toggle="modal" data-target="#truncate" >Kosongkan</button></th>
                 </tr>
@@ -39,14 +38,12 @@
                     foreach($data->result_array() as $i):
                         $id=$i['id'];
                             $username=$i['username'];
-                            $password=$i['password'];
                             $namapengawas=$i['namapengawas'];    
                 ?>
                 <tr>
                     <td><?php echo "$no"?></td>
-                    <td><?php echo $username;?> </td>
-                    <td><?php echo $password;?> </td>
-                    <td><?php echo $namapengawas;?> </td>
+                    <td><?php echo ucwords($username);?> </td>
+                    <td><?php echo ucwords($namapengawas);?> </td>
                     <td>
 
                         <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?php echo $id;?>"  href=""><i class="fa fa-pencil"></i></a>
