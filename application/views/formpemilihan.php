@@ -107,7 +107,7 @@ foreach($data->result_array() as $i):
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-md-12 col-lg-4 col-sm-12">
                             <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?php echo base_url('assets/img/calon/'.$foto)?>">
                             </div>
                             <div class="col">
