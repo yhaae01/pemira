@@ -53,7 +53,7 @@
                     <td><img src="<?php echo base_url('assets/img/calon/'.$foto)?>" width="64"> </td>
                     <td><?php echo $totalsuara;?> </td>
                     <td>
-                        <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?php echo $id;?>"  href=""><i class="fa fa-pencil"></i></a>
+                        <!-- <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?php echo $id;?>"  href=""><i class="fa fa-pencil"></i></a> -->
                         <a class="btn btn-outline-danger" href="<?php echo 'datacal/delete/'.$id=$i['id']; ?>"><i class="fa fa-trash-o"></i></a>
                         
                     </td>
