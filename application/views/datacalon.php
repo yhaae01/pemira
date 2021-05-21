@@ -10,7 +10,7 @@
 
             ?>
             <div class="alert alert-success"><center>
-                <?php echo $this->session->flashdata('success_msg'); ?>                
+                <?= $this->session->flashdata('success_msg'); ?>                
             </center></div>
             <?php
         } ?>
@@ -18,7 +18,7 @@
 
             ?>
             <div class="alert alert-danger"><center>
-                <?php echo $this->session->flashdata('error_msg'); ?>                
+                <?= $this->session->flashdata('error_msg'); ?>                
             </center></div>
             <?php
         } ?>
@@ -32,7 +32,10 @@
                     <th>Misi</th>
                     <th>Foto</th>
                     <th>Suara</th>
-                    <th width="150"><button class="btn btn-danger btn-block btn-sm" data-toggle="modal" data-target="#truncate" >Kosongkan</button></th>
+                    <th width="150">
+                    Aksi
+                    <!-- <button class="btn btn-danger btn-block btn-sm" data-toggle="modal" data-target="#truncate" >Kosongkan</button> -->
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -46,18 +49,35 @@
                             $totalsuara=$i['totalsuara'];        
                 ?>
                 <tr>
-                    <td><?php echo "$no"?></td>
-                    <td><?php echo ucwords($namacalon);?> </td>
-                    <td><?php echo $visi;?> </td>
-                    <td><?php echo $misi;?> </td>
-                    <td><img src="<?php echo base_url('assets/img/calon/'.$foto)?>" width="64"> </td>
-                    <td><?php echo $totalsuara;?> </td>
+                    <td><?= "$no"?></td>
+                    <td><?= ucwords($namacalon);?> </td>
+                    <td><?= $visi;?> </td>
+                    <td><?= $misi;?> </td>
+                    <td><img src="<?= base_url('assets/img/calon/'.$foto)?>" width="64"> </td>
+                    <td><?= $totalsuara;?> </td>
                     <td>
-                        <!-- <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?php echo $id;?>"  href=""><i class="fa fa-pencil"></i></a> -->
-                        <a class="btn btn-outline-danger" href="<?php echo 'datacal/delete/'.$id=$i['id']; ?>"><i class="fa fa-trash-o"></i></a>
-                        
+                        <!-- <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?= $id; ?>"  href=""><i class="fa fa-pencil"></i></a> -->
+                        <a class="btn btn-outline-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash-o"></i></a>
                     </td>
                 </tr>
+                <!--Modal delete -->
+                <div class="modal fade" id="delete<?= $i['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticModalLabel">Konfirmasi<hr>
+                                Apakah anda ingin hapus calon <b><?= ucwords($namacalon);?></b> ?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                                <form  action="<?= base_url('datacal/delete/') . $i['id'] ?>">
+                                    <input type="submit" class="btn btn-primary" value="Ya">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal delete -->
                 <?php $no++; endforeach;?>
             </tbody>
         </table>
@@ -75,8 +95,7 @@
                 <h2><i class="fa fa-plus-circle"></i>&nbsp; Calon</h2>
             </div>
 
-            <?php echo form_open_multipart('datacal/insert');?>
-            <!-- <form action="datacal/insert" method="post"> -->
+            <?= form_open_multipart('datacal/insert');?>
             <div class="modal-body">
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama</label></div>
@@ -103,8 +122,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <input type="submit" value="Tambah" class="btn btn-primary">
             </div>
-            <!-- </form> -->
-            <?php echo form_close() ?>
+            <?= form_close() ?>
         </div>
     </div>
 </div>
@@ -120,7 +138,7 @@ foreach($data->result_array() as $i):
     $totalsuara=$i['totalsuara'];  
 ?>
 
-<div class="modal fade" id="editdata<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="editdata<?= $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -131,26 +149,24 @@ foreach($data->result_array() as $i):
                 <h2><i class="fa fa-pencil"></i>&nbsp; Pemilih</h2>
             </div>
 
-            <?php echo form_open_multipart('datacal/edit/'.$id);?>
-            
-            <!-- <form action="<?php echo site_url('datacal/edit/'.$id);?>" method="post"> -->
+            <?= form_open_multipart('datacal/edit/'.$id);?>
             <div class="modal-body">
 
-            <div class="row form-group">
+                <div class="row form-group">
                     <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama</label></div>
                     <div class="col-12 col-md-9">
-                        <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon"  class="form-control" value="<?php echo $namacalon; ?>"></div>
+                        <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon"  class="form-control" value="<?= $namacalon; ?>"></div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Visi</label></div>
                     <div class="col-12 col-md-9">
-                        <textarea class="form-control" id="visiedit" name="visi"><?php echo $visi ?></textarea>
+                        <textarea class="form-control" id="visiedit" name="visi"><?= $visi ?></textarea>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Misi</label></div>
                     <div class="col-12 col-md-9">
-                        <textarea class="form-control" id="misiedit" name="misi" ><?php echo $misi ?></textarea></div>
+                        <textarea class="form-control" id="misiedit" name="misi" ><?= $misi ?></textarea></div>
                 </div>
                 <div class="form-group">
                     <label for="name">Foto</label>
@@ -163,8 +179,7 @@ foreach($data->result_array() as $i):
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <input type="submit" value="Ubah" class="btn btn-primary">
             </div>
-            <!-- </form> -->
-            <?php echo form_close() ?>
+            <?= form_close() ?>
         </div>
     </div>
 </div>
@@ -179,7 +194,7 @@ foreach($data->result_array() as $i):
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('index.php/Welcome/logout'); ?>">
+                <form  action="<?= base_url('index.php/Welcome/logout'); ?>">
                 <input type="submit" class="btn btn-primary" value="Ya">
             </form>
             </div>
@@ -196,14 +211,13 @@ foreach($data->result_array() as $i):
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('datacal/hapussemua') ?>">
+                <form  action="<?= base_url('datacal/hapussemua') ?>">
                     <input type="submit" class="btn btn-primary" value="Ya">
                 </form>
             </div>
         </div>
     </div>
 </div>
-<br>
 
 <script src="assets/js/ckeditor/ckeditor.js"></script>
 <script>

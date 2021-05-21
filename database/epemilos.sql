@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 25, 2020 at 11:50 AM
+-- Generation Time: May 21, 2021 at 07:01 AM
 -- Server version: 5.7.24
--- PHP Version: 7.4.8
+-- PHP Version: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,8 +49,8 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 CREATE TABLE `tb_calon` (
   `id` varchar(50) NOT NULL,
   `namacalon` varchar(50) NOT NULL,
-  `visi` varchar(256) NOT NULL,
-  `misi` varchar(256) NOT NULL,
+  `visi` text NOT NULL,
+  `misi` text NOT NULL,
   `foto` varchar(50) NOT NULL,
   `totalsuara` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -60,9 +60,8 @@ CREATE TABLE `tb_calon` (
 --
 
 INSERT INTO `tb_calon` (`id`, `namacalon`, `visi`, `misi`, `foto`, `totalsuara`) VALUES
-('5fe5b717afa03', 'Indah Chaesarawati', '<p>Menjadikan Keluarga BEM UBSI Bogor Sebagai Lembaga Yang Sinergis, Berkualitas, Unggul Dan Inovasi', '<p>1. Mewujudkan BEM UBSI Bogor Sebagai wadah utama mengalang aspirasi mahasiswa, oleh mahasiswa dan untuk mahasiswa</p><p>2. Melahirkan Mahasiswa yang aktif, solutif dan kreatif dalam mengelola isu s', '5fe5b717afa03.jpg', 0),
-('5fe5b7414a33e', 'Thifal Pratama sanjaya', '<p>Terbentuknya BEM UBSI Bogor yang berkolaborasi aktif, dan bersinergi. Demi terwujud nya lingkunga', '<p>1.Membangun hubungan harmonis antar elemen baik internal maupun eksternal kampus\\</p><p>2. Mendorong pengalaman tridharma perguruan tinggi</p><p>3. Mengoptimalkan fungsi advokasi mahasiswa</p><p>4.', '5fe5b7414a33e.jpg', 0),
-('5fe5b76b4ff33', 'Elis Setiawati', '<p>Mewujudkan aspirasi mahasiswa dan juga membantu mewujudkan generasi muda yang aktif inovatif dan ', '<p>1. Mengadakan kegiatan rutin bakti sosial</p><p>2. Menciptakan kegiatan program yang bersifat kegiatan keterampilan(kulikuler &amp; ekstrakulikuler)</p><p>3. Menciptakan kegiatan bermanfaat di luar', '5fe5b76b4ff33.jpg', 0);
+('60a7512319661', 'Surya Intan Permana', '<p>Mewujudkan lembaga eksekutif yang aktif dalam mewujudkan pengembangan minat dan bakat di universitas dan masyarakat Indonesia keseluruhan.</p>', '<ul><li>Bisa memberikan wadah dalam mengembangkan minat dan bakat mahasiswa.</li><li>Bisa memberikan pelayanan dan manfaat bagi seluruh mahasiswa.</li><li>Mampu menciptakan dan mengembangkan nilai pengabdian serta pelayanan mahasiswa.</li><li>Mampu menanamkan cinta budaya dan tanah air pada mahaiswa.</li></ul>', '60a7512319661.jpg', 0),
+('60a75ab1d743b', 'Ahmad Maulana Nasution', '<p>Mewujudkan mahasiswa Milenial yang aktif, kreatif dan bertanggung jawab yang mampu mengembangkan kampus dan masyarakat Indonesia.</p>', '<ol><li>Mampu mendukung dan menyelenggarakan kegiatan di kampus dan luar kampus.</li><li>Menampung aspirasi dan memecahkan masalah mahasiswa dengan prinsip kekeluargaan.</li><li>Menyelenggarakan program pengembangan bakat dan minat seluruh mahasiswa.</li><li>Mampu bekerja sama untuk mencapai tujuan BEM sebagai organisasi mahasiswa yang bersinergi.</li></ol>', '60a75ab1d743b.png', 0);
 
 -- --------------------------------------------------------
 
@@ -105,7 +104,7 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `suara`, `absen`) VALUES
-('5fe591340e9f8', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '', '');
+('5fe591340e9f8', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '0', '0');
 
 --
 -- Indexes for dumped tables

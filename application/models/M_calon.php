@@ -37,17 +37,35 @@ class M_calon extends CI_Model{
         $this->namacalon = $post["namacalon"];
         $this->visi = $post["visi"];
         $this->misi = $post["misi"];
-        if (!empty($_FILES["foto"]["name"])) {
-			$this->foto = $this->_uploadImage();
-		} else {
-			$this->foto = $post["old_image"];
+		
+        // jika ada gambar yang di upload
+		$uploadfoto = $_FILES['foto']['nama'];
+
+		if ($uploadfoto) {
+			$nama = 'calon_' . time();
+			$config['upload_path'] = './assets/img/calon/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']  = '2000';
+			$config['max_width']  = '2000';
+			$config['max_height']  = '2000';
+			$config['file_name'] = $nama;
+
+			$this->load->library('upload', $config);
+
+			if ($this->upload->do_upload('foto')) {
+				$prevfoto  = $this->db->get_where('tb_calon', ['id' => $id])->row_array()['foto'];
+				// delete previous foto
+				if ($prevfoto != 'default.jpg') {
+					unlink(FCPATH . 'assets/img/calon/' . $prevfoto);
+				}
+				$new_foto = $this->upload->data('file_name');
+
+				$this->db->set('foto', $new_foto);
+			} else {
+				echo $this->upload->display_errors();
+			}
 		}
 		$this->db->update('tb_calon', $this);
-		if ($this->db->affected_rows()>0) {
-			return true;
-		}else{
-			return false;
-		}
 	}
 
 	private function _uploadImage()
@@ -56,9 +74,6 @@ class M_calon extends CI_Model{
 		$config['allowed_types']        = 'gif|jpg|png';
 		$config['file_name']            = $this->id;
 		$config['overwrite']			= true;
-		// $config['max_size']             = 1024; // 1MB
-		// $config['max_width']            = 1024;
-		// $config['max_height']           = 768;
 
     $this->load->library('upload', $config);
 
@@ -79,9 +94,14 @@ class M_calon extends CI_Model{
         };
 		endforeach;
 
+		$prevImage  = $this->db->get_where('tb_calon', ['id' => $id])->row_array()['foto'];
+
+		if ($prevImage != 'default.jpg') {
+            unlink(FCPATH . 'assets/img/calon/' . $prevImage);
+        }
+
 		$this->db->where('id',$id);
 		$this->db->delete('tb_calon');
-		// $this->_deleteImage($id);
 		if($this->db->affected_rows()>0){
 			return true;
 		}else{

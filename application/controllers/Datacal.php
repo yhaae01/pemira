@@ -44,9 +44,4 @@ class Datacal extends CI_Controller {
 		}
 		redirect(base_url('Datacal'));
 	}
-
-	public function hapussemua(){
-		$result=$this->mc->truncate();
-		redirect(base_url('Datacal'));
-	}
 }
