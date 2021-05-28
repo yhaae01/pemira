@@ -4,7 +4,7 @@
         <hr>
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button> <a href="<?php echo base_url('datapem/export') ?>" class="btn btn-success" ><i class="fa fa-print"></i>&nbsp; Export</a>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button> <a href="<?= base_url('datapem/export') ?>" class="btn btn-success" ><i class="fa fa-print"></i>&nbsp; Export</a>
             </div>
     	</div>
         <hr>
@@ -12,7 +12,7 @@
 
             ?>
             <div class="alert alert-success"><center>
-                <?php echo $this->session->flashdata('success_msg'); ?>                
+                <?= $this->session->flashdata('success_msg'); ?>                
             </center></div>
             <?php
         } ?>
@@ -20,7 +20,7 @@
 
             ?>
             <div class="alert alert-danger"><center>
-                <?php echo $this->session->flashdata('error_msg'); ?>                
+                <?= $this->session->flashdata('error_msg'); ?>                
             </center></div>
             <?php
         } ?>
@@ -44,15 +44,14 @@
                             $id=$i['id'];
                             $nis=$i['nis']; 
                             $namasiswa=$i['namasiswa']; 
-                            // $kelas=$i['kelas']; 
                             $suara=$i['suara'];
                             $absen=$i['absen'];        
                 ?>
                 <tr>
-                    <td style="text-align: center;"><?php echo "$no"?></td>
-                    <td><?php echo $nis;?> </td>
-                    <td><?php echo ucwords($namasiswa);?> </td>
-                    <!-- <td><?php echo $kelas;?> </td> -->
+                    <td style="text-align: center;"><?= "$no"?></td>
+                    <td><?= $nis;?> </td>
+                    <td><?= ucwords($namasiswa);?> </td>
+                    <!-- <td><?= $kelas;?> </td> -->
                     <td style="text-align: center;"><?php
                         if ($absen=='0') {
                             ?>
@@ -76,15 +75,31 @@
                         };
                     ?> </td>
                     <td>
-
-                        <a class="btn btn-outline-success" data-toggle="modal" data-target="#editdata<?php echo $id;?>"  href=""><i class="fa fa-pencil"></i></a>
-                        <a class="btn btn-outline-primary" href="datapem/edita/<?php echo $id;?>" title="Absen" href=""><i class="fa fa-check"></i></a>
-                        <a class="btn btn-outline-secondary" href="datapem/editbatal/<?php echo $id;?>" title="Batal Absen"  href=""><i class="fa fa-undo"></i></a>
-                        <a class="btn btn-outline-warning" data-toggle="tooltip" data-placement="top" title="Reset Pilihan" href="<?php echo  base_url('index.php/datapem/resetpilihan/'.$id);?>"><i class="fa fa-undo"></i></a>
-                        <a class="btn btn-outline-danger" href="<?php echo  base_url('index.php/datapem/delete/'.$id);?>"><i class="fa fa-trash"></i></a>
-                        
+                        <a class="btn btn-outline-success" data-toggle="modal" data-target="#editdata<?= $id;?>"  href=""><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-outline-primary" href="datapem/edita/<?= $id;?>" title="Absen" href=""><i class="fa fa-check"></i></a>
+                        <a class="btn btn-outline-secondary" href="datapem/editbatal/<?= $id;?>" title="Batal Absen"  href=""><i class="fa fa-times"></i></a>
+                        <a class="btn btn-outline-warning" data-toggle="tooltip" data-placement="top" title="Reset Pilihan" href="<?=  base_url('index.php/datapem/resetpilihan/'.$id);?>"><i class="fa fa-undo"></i></a>
+                        <a class="btn btn-outline-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
+                <!--Modal delete -->
+                <div class="modal fade" id="delete<?= $i['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticModalLabel">Konfirmasi<hr>
+                                Apakah anda ingin hapus mahasiswa <b><?= ucwords($namasiswa);?></b> ?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                                <form  action="<?= base_url('datapem/delete/'.$id);?>">
+                                    <input type="submit" class="btn btn-primary" value="Ya">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal delete -->
                 <?php $no++; endforeach;?>
             </tbody>
         </table>
@@ -145,7 +160,7 @@
     // $kelas=$i['kelas']; 
     $suara=$i['suara'];
 ?>
-<div class="modal fade" id="editdata<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="editdata<?= $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -156,23 +171,23 @@
                 <h2><i class="fa fa-pencil"></i>&nbsp; Pemilih</h2>
             </div>
 
-            <form action="<?php echo  base_url('index.php/datapem/edit/'.$id);?>" method="post">
+            <form action="<?=  base_url('index.php/datapem/edit/'.$id);?>" method="post">
                 <div class="modal-body">
 
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">NIS</label></div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="nis" name="nis" placeholder="NIS . . ."  class="form-control" readonly value="<?php echo $nis; ?>"></div>
+                            <input type="text" id="nis" name="nis" placeholder="NIS . . ."  class="form-control" readonly value="<?= $nis; ?>"></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Passowrd</label></div>
                         <div class="col-12 col-md-9">
-                            <input type="password" id="password" name="password" placeholder="NIS . . ."  readonly class="form-control" value="<?php echo $password; ?>"></div>
+                            <input type="password" id="password" name="password" placeholder="NIS . . ."  readonly class="form-control" value="<?= $password; ?>"></div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Pemilih</label></div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="nama" name="nama" placeholder="Nama . . ."  class="form-control" value="<?php echo $namasiswa; ?>"></div>
+                            <input type="text" id="nama" name="nama" placeholder="Nama . . ."  class="form-control" value="<?= $namasiswa; ?>"></div>
                     </div>
                 </div>
             
@@ -187,7 +202,6 @@
 <?php endforeach;?>
         <div class="clearfix"></div>
 
-
 <!--Modal Keluar -->
 <div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
@@ -197,7 +211,7 @@
                 </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('index.php/Welcome/logout'); ?>">
+                <form  action="<?= base_url('index.php/Welcome/logout'); ?>">
                     <input type="submit" class="btn btn-primary" value="Ya">
                 </form>
             </div>
@@ -215,7 +229,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('index.php/datapem/hapussemua') ?>">
+                <form  action="<?= base_url('index.php/datapem/hapussemua') ?>">
                     <input type="submit" class="btn btn-primary" value="Ya">
                 </form>
             </div>

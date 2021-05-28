@@ -6,11 +6,11 @@
             <div class="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button></div>
     	</div>
         <hr>
-<?php if($this->session->flashdata('success_msg')){
+        <?php if($this->session->flashdata('success_msg')){
 
             ?>
             <div class="alert alert-success"><center>
-                <?php echo $this->session->flashdata('success_msg'); ?>                
+                <?= $this->session->flashdata('success_msg'); ?>                
             </center></div>
             <?php
         } ?>
@@ -18,7 +18,7 @@
 
             ?>
             <div class="alert alert-danger"><center>
-                <?php echo $this->session->flashdata('error_msg'); ?>                
+                <?= $this->session->flashdata('error_msg'); ?>                
             </center></div>
             <?php
         } ?>
@@ -41,22 +41,36 @@
                             $namapengawas=$i['namapengawas'];    
                 ?>
                 <tr>
-                    <td><?php echo "$no"?></td>
-                    <td><?php echo ucwords($username);?> </td>
-                    <td><?php echo ucwords($namapengawas);?> </td>
+                    <td><?= "$no"?></td>
+                    <td><?= ucwords($username);?> </td>
+                    <td><?= ucwords($namapengawas);?> </td>
                     <td>
-
-                        <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?php echo $id;?>"  href=""><i class="fa fa-pencil"></i></a>
-                        <a class="btn btn-outline-danger" href="<?php echo  base_url('datapeng/delete/'.$id);?>"><i class="fa fa-trash"></i></a>
-                        
+                        <a class="btn btn-outline-primary" data-toggle="modal" data-target="#editdata<?= $id;?>"  href=""><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-outline-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
+                <!--Modal delete -->
+                <div class="modal fade" id="delete<?= $i['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticModalLabel">Konfirmasi<hr>
+                                Apakah anda ingin hapus pengawas <b><?= ucwords($namapengawas);?></b> ?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                                <form  action="<?= base_url('datapeng/delete/'.$id);?>">
+                                    <input type="submit" class="btn btn-primary" value="Ya">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal delete -->
                 <?php $no++; endforeach;?>
             </tbody>
         </table>
     </div>
-
-
 
 <!--Modal tambah-->
 <div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
@@ -111,7 +125,7 @@ foreach($data->result_array() as $i):
     $namapengawas=$i['namapengawas']; 
 
 ?>
-<div class="modal fade" id="editdata<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="editdata<?= $id;?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -122,25 +136,25 @@ foreach($data->result_array() as $i):
                 <h2><i class="fa fa-pencil"></i>&nbsp; Pengawas</h2>
             </div>
 
-            <form action="<?php echo  base_url('datapeng/edit/'.$id);?>" method="post">
+            <form action="<?=  base_url('datapeng/edit/'.$id);?>" method="post">
                 <div class="modal-body">
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Username
                         </label></div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="nis" name="username" placeholder="NIS. . ."  class="form-control"  value="<?php echo $username; ?>">
+                            <input type="text" id="nis" name="username" placeholder="NIS. . ."  class="form-control"  value="<?= $username; ?>">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Passowrd</label></div>
                         <div class="col-12 col-md-9">
-                            <input type="password" id="password" name="password" placeholder="Password. . ."  class="form-control" value="<?php echo $password; ?>">
+                            <input type="password" id="password" name="password" placeholder="Password. . ."  class="form-control" value="<?= $password; ?>">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Pengawas</label></div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="namapengawas" name="namapengawas" placeholder="Nama . . ."  class="form-control" value="<?php echo $namapengawas; ?>">
+                            <input type="text" id="namapengawas" name="namapengawas" placeholder="Nama . . ."  class="form-control" value="<?= $namapengawas; ?>">
                         </div>
                     </div>
                 </div>
@@ -166,7 +180,7 @@ foreach($data->result_array() as $i):
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('Welcome/logout'); ?>">
+                <form  action="<?= base_url('Welcome/logout'); ?>">
                 <input type="submit" class="btn btn-primary" value="Ya">
             </form>
             </div>
@@ -182,7 +196,7 @@ foreach($data->result_array() as $i):
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('datapeng/hapussemua') ?>">
+                <form  action="<?= base_url('datapeng/hapussemua') ?>">
                 <input type="submit" class="btn btn-primary" value="Ya">
             </form>
             </div>
