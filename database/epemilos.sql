@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 21, 2021 at 07:01 AM
+-- Generation Time: May 28, 2021 at 12:58 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -60,8 +60,9 @@ CREATE TABLE `tb_calon` (
 --
 
 INSERT INTO `tb_calon` (`id`, `namacalon`, `visi`, `misi`, `foto`, `totalsuara`) VALUES
-('60a7512319661', 'Surya Intan Permana', '<p>Mewujudkan lembaga eksekutif yang aktif dalam mewujudkan pengembangan minat dan bakat di universitas dan masyarakat Indonesia keseluruhan.</p>', '<ul><li>Bisa memberikan wadah dalam mengembangkan minat dan bakat mahasiswa.</li><li>Bisa memberikan pelayanan dan manfaat bagi seluruh mahasiswa.</li><li>Mampu menciptakan dan mengembangkan nilai pengabdian serta pelayanan mahasiswa.</li><li>Mampu menanamkan cinta budaya dan tanah air pada mahaiswa.</li></ul>', '60a7512319661.jpg', 0),
-('60a75ab1d743b', 'Ahmad Maulana Nasution', '<p>Mewujudkan mahasiswa Milenial yang aktif, kreatif dan bertanggung jawab yang mampu mengembangkan kampus dan masyarakat Indonesia.</p>', '<ol><li>Mampu mendukung dan menyelenggarakan kegiatan di kampus dan luar kampus.</li><li>Menampung aspirasi dan memecahkan masalah mahasiswa dengan prinsip kekeluargaan.</li><li>Menyelenggarakan program pengembangan bakat dan minat seluruh mahasiswa.</li><li>Mampu bekerja sama untuk mencapai tujuan BEM sebagai organisasi mahasiswa yang bersinergi.</li></ol>', '60a75ab1d743b.png', 0);
+('60b03c9c3c527', 'Surya Intan Permana', '<p>Membentuk Badan Eksekutif Mahasiswa yang aktif sebagai pionir dalam pergerakan untuk mewujudkan mahasiswa yang berkompeten dan memiliki integritas terhadap problematika yang terjadi di tengah masyarakat.</p>', '<ol><li>Memotivasi sesama rekan mahasiswa agar menumbuhkan daya saing yang tinggi dan produktivitas yang berdampak di era teknologi yang dinamis di tengah masyarakat.</li><li>Menjadikan BEM sebagai mediator antara universitas dan mahasiswa dalam berkomunikasi dan berdiskusi, juga menjadi penampung dan pelaksana aspirasi mahasiswa.</li><li>Mendukung pertumbuhan mahasiswa yang memiliki intelektual tinggi dan keberanian yang besar dalam menanggapi segala bentuk perubahan.</li></ol>', 'calon_1622162588.png', 2),
+('60b03cc48c1c0', 'Ahmad Maulana', '<p>Menjadikan BEM sebagai wadah penerima aspirasi mahasiswa, sekaligus penggerak dan pelaksana aspirasi mahasiswa yang relevan bagi mahasiswa dan universitas, juga menciptakan BEM sebagai organisasi yang jujur, adil, disiplin, dan berakhlak mulia dalam lingkup masyarakat maupun kampus.</p>', '<ol><li>Membuka diri terhadap masukan yang diberikan mahasiswa maupun universitas demi pengembangan diri BEM yang lebih baik untu kke depannya.</li><li>Mendukung kemajuan organisasi/ UKM yang berada di bawah naungan universitas.</li><li>Menjalin komunikasi yang harmonis dengan organisasi/ UKM secara internal maupun eksternal guna mewujudkan visi misi BEM dan juga visi dan misi organisasi/ UKM</li><li>Mengadakan kegiatan sosial yang memberi dampak positif terhadap lingkungan sekitar.</li></ol>', 'calon_1622162628.jpg', 0),
+('60b03d1437ad7', 'Eka Wardana', '<p>Mewujudkan BEM yang independen, unggul, berkualitas, aspiratif, dan progresif, guna menunaikan tugas yang telah dipercayakan mahasiswa dan universitas kepada BEM</p>', '<ol><li>Menjadi sebuah wadah yang transparan bagi aspirasi mahasiswa dan menindaklanjuti aspirasi tersebut agar bisa diwujudkan secara nyata di lingkup universitas dan masyarakat</li><li>Mengadakan kegiatan untuk pengembangan diri mahasiswa secara rutin, sehingga muncul bibit bibit unggul dari mahasiswa</li><li>Menjadi organisasi yang mandiri terhadap pengadaan kegiatan, namun tetap bertanggung jawab baik terhadap universitas maupun mahasiswa.</li></ol>', 'calon_1622162708.png', 0);
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,9 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `suara`, `absen`) VALUES
-('5fe591340e9f8', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '0', '0');
+('5fe591340e9f8', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '60b03c9c3c527', '5fe591340e9f8'),
+('60ad918ab3c52', '12180310', 'ecf3a6a1857c750142183ce938185f0f', 'ahmad maulana', '60b03c9c3c527', '60ad918ab3c52'),
+('60ad91d969057', '12180311', '32250170a0dca92d53ec9624f336ca24', 'eka wardana', '0', '0');
 
 --
 -- Indexes for dumped tables
