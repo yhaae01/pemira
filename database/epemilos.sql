@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 30, 2021 at 10:40 PM
+-- Generation Time: May 30, 2021 at 10:45 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -122,7 +122,8 @@ INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `suara`, `absen`) 
 ('60b40ff9a3a73', '12191532', '579214e21f2c43c3c2ecd5971aa7197b', 'indah fitriani', '0', '0'),
 ('60b4100201a07', '12170789', 'd10c07188c32137d91b0a75076e54882', 'abdul aziz', '0', '0'),
 ('60b4100c90bd5', '12191819', 'e1446dd82be92baec247a55c08597639', 'rifqy akhbar alfiansyah', '0', '0'),
-('60b4101793f0f', '12192505', '3e370f1c9e2dbff1b07b13cccda2f95e', 'lucky nursarastri', '0', '0');
+('60b4101793f0f', '12192505', '3e370f1c9e2dbff1b07b13cccda2f95e', 'lucky nursarastri', '0', '0'),
+('60b4156a037b5', '12180308', 'ad91d1c567d83177dec11803c9ff858b', 'surya intan permana', '0', '0');
 
 --
 -- Indexes for dumped tables
