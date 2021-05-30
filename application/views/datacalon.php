@@ -2,7 +2,7 @@
         <h1><i class="fa fa-users"> </i> DATA CALON</h1>
         <hr>
         <div class="row">
-            <div class="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button></div>
+            <div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button></div>
     	</div>
     	<hr>
         <?php if($this->session->flashdata('success_msg')){
@@ -140,23 +140,23 @@
             <?= form_open_multipart('datacal/insert');?>
             <div class="modal-body">
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama</label></div>
-                    <div class="col-12 col-md-9">
-                        <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon"  class="form-control"></div>
+                    <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Nama</label></b></div>
+                    <div class="col-12">
+                        <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon . . ."  class="form-control"></div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Visi</label></div>
-                    <div class="col-12 col-md-9">
+                    <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Visi</label></b></div>
+                    <div class="col-12">
                         <textarea class="form-control" id="visi" name="visi"></textarea>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Misi</label></div>
-                    <div class="col-12 col-md-9">
+                    <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Misi</label></b></div>
+                    <div class="col-12">
                         <textarea class="form-control" id="misi" name="misi"></textarea></div>
                 </div>
                 <div class="form-group">
-                    <label for="name">Foto</label>
+                    <b><label for="name">Foto</label></b>
                     <input class="form-control-file" type="file" name="upfoto" id="upfoto" />
                 </div>
             </div>
@@ -165,23 +165,6 @@
                 <input type="submit" value="Tambah" class="btn btn-primary">
             </div>
             <?= form_close() ?>
-        </div>
-    </div>
-</div>
-
-<!--Modal Keluar -->
-<div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?= base_url('index.php/Welcome/logout'); ?>">
-                <input type="submit" class="btn btn-primary" value="Ya">
-            </form>
-            </div>
         </div>
     </div>
 </div>

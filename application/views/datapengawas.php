@@ -3,8 +3,11 @@
         <h1><i class="fa fa-users"> </i> DATA PENGAWAS</h1>
         <hr>
         <div class="row">
-            <div class="col"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button></div>
-    	</div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#truncate"><i class="fa fa-trash"></i>&nbsp; Kosongkan</button>
+            </div>
+        </div>
         <hr>
         <?php if($this->session->flashdata('success_msg')){
 
@@ -30,7 +33,9 @@
                     <th>No</th>
                     <th>Username</th>
                     <th>Nama Pengawas</th>
-                    <th width="150"><button class="btn btn-danger btn-block btn-sm" data-toggle="modal" data-target="#truncate" >Kosongkan</button></th>
+                    <th width="150">
+                    Aksi
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -87,21 +92,21 @@
             <form action="datapeng/insert" method="post">
                 <div class="modal-body">
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Username</label></div>
-                        <div class="col-12 col-md-9">
-                            <input type="text" id="nis" name="username" placeholder="Username . . ." required class="form-control">
+                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">NIM</label></div>
+                        <div class="col-12">
+                            <input type="text" id="nis" name="username" placeholder="NIM . . ." required class="form-control">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Password</label></div>
-                        <div class="col-12 col-md-9">
+                        <div class="col-12">
                             <input type="password" id="password" name="password" placeholder="Password . . ."  class="form-control">
                         </div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Pengawas</label></div>
-                        <div class="col-12 col-md-9">
-                            <input type="text" id="namapengawas" name="namapengawas" placeholder="Nama Pengawas . . ." class="form-control">
+                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama</label></div>
+                        <div class="col-12">
+                            <input type="text" id="namapengawas" name="namapengawas" placeholder="Nama . . ." class="form-control">
                         </div>
                     </div>
                         
@@ -170,35 +175,21 @@ foreach($data->result_array() as $i):
         <?php endforeach;?>
         <div class="clearfix"></div>
 
-
-<!--Modal Keluar -->
-<div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?= base_url('Welcome/logout'); ?>">
-                <input type="submit" class="btn btn-primary" value="Ya">
-            </form>
-            </div>
-        </div>
-    </div>
-</div>
 <!--Modal truncate -->
 <div class="modal fade" id="truncate" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin menghapus semua data pengawas ?</h5>
+                    <h4 class="modal-title" id="staticModalLabel">Konfirmasi</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah anda yakin ingin menghapus semua data pengawas ?</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?= base_url('datapeng/hapussemua') ?>">
-                <input type="submit" class="btn btn-primary" value="Ya">
-            </form>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <form  action="<?= base_url('datapeng/hapussemua') ?>">
+                        <input type="submit" class="btn btn-primary" value="Ya">
+                    </form>
             </div>
         </div>
     </div>

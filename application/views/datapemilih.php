@@ -4,8 +4,10 @@
         <hr>
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button> <a href="<?= base_url('datapem/export') ?>" class="btn btn-success" ><i class="fa fa-print"></i>&nbsp; Export</a>
-            </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata" ><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button> 
+                <!-- <a href="<?= base_url('datapem/export') ?>" class="btn btn-success" ><i class="fa fa-print"></i>&nbsp; Export</a> -->
+                <button class="btn btn-danger" data-toggle="modal" data-target="#truncate" ><i class="fa fa-trash"></i>&nbsp; Kosongkan</button>
+            </div> 
     	</div>
         <hr>
         <?php if($this->session->flashdata('success_msg')){
@@ -35,17 +37,19 @@
                     <!-- <th>Kelas</th> -->
                     <th>Absen</th>
                     <th>Suara</th>
-                    <th width="150"><button class="btn btn-danger btn-block btn-sm" data-toggle="modal" data-target="#truncate" >Kosongkan</button></th>
+                    <th width="150">
+                    Aksi
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no=1;
                     foreach($data->result_array() as $i):
-                            $id=$i['id'];
-                            $nis=$i['nis']; 
-                            $namasiswa=$i['namasiswa']; 
-                            $suara=$i['suara'];
-                            $absen=$i['absen'];        
+                        $id=$i['id'];
+                        $nis=$i['nis']; 
+                        $namasiswa=$i['namasiswa']; 
+                        $suara=$i['suara'];
+                        $absen=$i['absen'];        
                 ?>
                 <tr>
                     <td style="text-align: center;"><?= "$no"?></td>
@@ -117,14 +121,12 @@
                 <h2><i class="fa fa-plus-circle"></i>&nbsp; Pemilih</h2>
             </div>
 
-
             <form action="datapem/insert" method="post">
                 <div class="modal-body">
-
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">NIM</label></div>
                         <div class="col-12">
-                            <input type="text" id="nis" name="nis" placeholder="NIS . . ." required class="form-control">
+                            <input type="text" id="nis" name="nis" placeholder="NIM . . ." autocomplete="no" required class="form-control">
                         </div>
                     </div>
                     <div class="row form-group">
@@ -136,7 +138,7 @@
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Pemilih</label></div>
                         <div class="col-12">
-                            <input type="text" id="nama" name="nama" placeholder="Nama . . ."  class="form-control">
+                            <input type="text" id="nama" name="nama" placeholder="Nama . . ." autocomplete="no" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -202,30 +204,16 @@
 <?php endforeach;?>
         <div class="clearfix"></div>
 
-<!--Modal Keluar -->
-<div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
-                </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?= base_url('index.php/Welcome/logout'); ?>">
-                    <input type="submit" class="btn btn-primary" value="Ya">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Modal Keluar -->
-
 <!--Modal truncate -->
 <div class="modal fade" id="truncate" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Jika Anda menghapus semua data pemilih maka hasil pemilihan juga akan direset...<hr>Apakah anda yakin ingin menghapus semua data pemilih ?</h5>
+                    <h4 class="modal-title" id="staticModalLabel">Konfirmasi</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Jika Anda menghapus semua data pemilih maka hasil pemilihan juga akan direset... </p> 
+                    <p>Apakah anda yakin ingin menghapus semua data pemilih ?</p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>

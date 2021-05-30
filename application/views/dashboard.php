@@ -86,23 +86,26 @@ $sec = "10";
     </div> <!-- .content -->
 <div class="clearfix"></div>
 
-
 <!--Modal Keluar -->
 <div class="modal fade" id="konfirmkeluar" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticModalLabel">Apakah anda yakin ingin keluar?</h5>
+                    <h4 class="modal-title" id="staticModalLabel">Konfirmasi</h4>
                 </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                <form  action="<?php echo base_url('index.php/Welcome/logout'); ?>">
-                    <input type="submit" class="btn btn-primary" value="Ya">
-                </form>
+                <div class="modal-body">
+                    <p>Apakah anda yakin ingin keluar?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Tidak</button>
+                    <form  action="<?= base_url('index.php/Welcome/logout'); ?>">
+                        <input type="submit" class="btn btn-outline-danger" value="Ya, keluar">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- End Modal Keluar -->
 
 <!--Modal Grafik -->
 <div class="modal fade" id="lihatgrafik" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">

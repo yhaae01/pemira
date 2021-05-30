@@ -60,10 +60,10 @@
                     ?>
                     <form method="POST" action="<?php echo base_url('Welcome/aksi_login'); ?>">
                         <div class="form-group">
-                            <input type="text" name="username" placeholder="Username/NIS" class="form-control">
+                            <input type="text" name="username" placeholder="NIM . . ." class="form-control" autocomplete="no">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" placeholder="password" class="form-control">
+                            <input type="password" name="password" placeholder="Password . . ." class="form-control">
                         </div>
                         <div class="form-group">                        
                             <input type="submit" value="Login" class="btn btn-primary">
