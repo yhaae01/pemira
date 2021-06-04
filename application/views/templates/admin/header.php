@@ -1,10 +1,11 @@
 <!doctype html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
-    
+
     <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
     <link rel="shortcut icon" href="assets/img/bem-logo.png">
 
@@ -18,31 +19,31 @@
     <link href="assets/calendar/fullcalendar.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/css/charts/chartist.min.css" rel="stylesheet"> 
-    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet"> 
+    <link href="assets/css/charts/chartist.min.css" rel="stylesheet">
+    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/datatable/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="assets/datatable/css/dataTables.bootstrap.css">
 
 </head>
+
 <body>
 
-<?php
-$login=$this->session->userdata('status');
-if($login=='loginadmin'){
-    
-}else if($login=='loginpengawas'){
-    redirect(base_url('?pesan=salah'));
-}else if($login=='loginsiswa'){
-    redirect(base_url('?pesan=salah'));
-}else{
-    redirect(base_url('?pesan=belumlogin'));
-}
-?>
+    <?php
+    $login = $this->session->userdata('status');
+    if ($login == 'loginadmin') {
+    } else if ($login == 'loginpengawas') {
+        redirect(base_url('?pesan=salah'));
+    } else if ($login == 'loginsiswa') {
+        redirect(base_url('?pesan=salah'));
+    } else {
+        redirect(base_url('?pesan=belumlogin'));
+    }
+    ?>
 
-    <!-- Left Panel --> 
+    <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default"> 
+        <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
@@ -62,19 +63,19 @@ if($login=='loginadmin'){
     </aside>
     <!-- Left Panel -->
 
-    <!-- Right Panel --> 
+    <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-        <header id="header" class="header">  
+        <header id="header" class="header">
             <div class="top-left">
-                <div class="navbar-header"> 
-                    <a class="navbar-brand" href=""><img src="assets/img/putih.jpg" alt="Logo"></a> 
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> 
-                </div> 
+                <div class="navbar-header">
+                    <a class="navbar-brand" href=""><img src="assets/img/logo.png" width="40" height="40" alt="Logo"></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
             </div>
             <div style="position: fixed;right: 30px; top: 8px;">
-                    <a class="btn btn-outline-danger" data-toggle="modal" data-target="#konfirmkeluar">Keluar</a>
+                <a class="btn btn-outline-danger" data-toggle="modal" data-target="#konfirmkeluar">Keluar</a>
             </div>
         </header>
         <!-- Header-->

@@ -33,8 +33,8 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <div class="row">
-                    <div class="col-3"><img src="<?php echo base_url('assets/img/putih.jpg'); ?>"></div>
-                    <div class="col text-right"><b>Selamat Datang : <?php echo ucwords($this->session->userdata('nama')); ?> </b><br>Silahkan pilih calon ketua BEM UBSI BOGOR dibawah ini...</div>
+                    <div class="col-3"><img src="<?php echo base_url('assets/img/logo2.png'); ?>"></div>
+                    <div class="col-9 text-right"><b>Selamat Datang : <?php echo ucwords($this->session->userdata('nama')); ?> </b><br>Silahkan pilih calon ketua BEM UBSI BOGOR dibawah ini...</div>
                 </div>
             </li>
         </ol>
