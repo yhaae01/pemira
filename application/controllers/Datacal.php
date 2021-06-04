@@ -1,31 +1,36 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Datacal extends CI_Controller {
+class Datacal extends CI_Controller
+{
 
-	function __construct(){
-            parent::__construct();
-            $this->load->model('M_calon','mc');
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_calon', 'mc');
 	}
-	
-	public function index(){
-		$x['data']=$this->mc->show_calon();
+
+	public function index()
+	{
+		$x['data'] = $this->mc->show_calon();
 		$this->load->view('templates/admin/header');
-		$this->load->view('datacalon',$x);
+		$this->load->view('datacalon', $x);
 		$this->load->view('templates/admin/footer');
 	}
 
-    function insert(){
-		$result=$this->mc->insert_data();
-		if($result){
-			$this->session->set_flashdata('success_msg','Data berhasil ditambah');
-		}else{
-			$this->session->set_flashdata('error_msg','Gagal menambah data');
+	function insert()
+	{
+		$result = $this->mc->insert_data();
+		if ($result) {
+			$this->session->set_flashdata('success_msg', 'Data berhasil ditambah');
+		} else {
+			$this->session->set_flashdata('error_msg', 'Gagal menambah data');
 		}
 		redirect(base_url('Datacal'));
 	}
-	
-	public function edit(){
+
+	public function edit()
+	{
 		$id = $this->input->post('id');
 
 		// jika ada gambar yang di upload
@@ -58,12 +63,13 @@ class Datacal extends CI_Controller {
 		$this->mc->editcalon($id);
 	}
 
-	public function delete($id){
-		$result=$this->mc->deletecalon($id);
-		if($result){
-			$this->session->set_flashdata('success_msg','Data berhasil dihapus');
-		}else{
-			$this->session->set_flashdata('error_msg','Gagal menghapus data');
+	public function delete($id)
+	{
+		$result = $this->mc->deletecalon($id);
+		if ($result) {
+			$this->session->set_flashdata('success_msg', 'Data berhasil dihapus');
+		} else {
+			$this->session->set_flashdata('error_msg', 'Gagal menghapus data');
 		}
 		redirect(base_url('Datacal'));
 	}
