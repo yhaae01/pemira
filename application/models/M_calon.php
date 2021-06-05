@@ -61,10 +61,18 @@ class M_calon extends CI_Model
 	{
 		$id         = $this->input->post('id');
 		$namacalon  = $this->input->post('namacalon');
+		$jurusan   	= $this->input->post('jurusan');
+		$asalkampus = $this->input->post('asalkampus');
+		$riwayat  	= $this->input->post('riwayat');
+		$proker  	= $this->input->post('proker');
 		$visi   	= $this->input->post('visi');
 		$misi   	= $this->input->post('misi');
 
 		$this->db->set('namacalon', $namacalon);
+		$this->db->set('jurusan', $jurusan);
+		$this->db->set('asalkampus', $asalkampus);
+		$this->db->set('riwayat', $riwayat);
+		$this->db->set('proker', $proker);
 		$this->db->set('visi', $visi);
 		$this->db->set('misi', $misi);
 		$this->db->where('id', $id);
