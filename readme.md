@@ -4,7 +4,7 @@ Program E-Pemilos ini dibuat menggunakan Codeigniter 3 dan Bootstrap.
 
 ## Spesifikasi Minimum
 
-- PHP >= 7.4.\*
+- PHP >= 5.3.7
 - Google Chrome >= 89.0.4389.114
 
 ## User Access
@@ -14,12 +14,6 @@ Program E-Pemilos ini dibuat menggunakan Codeigniter 3 dan Bootstrap.
    NIM : admin
 
    Password : 111
-
-2. Siswa
-
-   NIM : 12180308
-
-   Password : 12180308
 
 ## Cara Menggunakan
 
