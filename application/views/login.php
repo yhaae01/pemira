@@ -32,7 +32,7 @@
                 <div class="login-form">
                     <div class="login-logo">
                         <a href="#">
-                            <img class="align-content" src="assets/img/putih.jpg" alt="">
+                            <img class="align-content" src="assets/img/logo.png" height="180">
                             <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
                         </a>
                     </div>

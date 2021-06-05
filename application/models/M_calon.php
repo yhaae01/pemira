@@ -38,11 +38,17 @@ class M_calon extends CI_Model
 	function insert_data()
 	{
 		$post = $this->input->post();
-		$this->id = uniqid();
+
+		$this->nim = $post["nim"];
 		$this->namacalon = $post["namacalon"];
+		$this->jurusan = $post["jurusan"];
+		$this->asalkampus = $post["asalkampus"];
+		$this->riwayat = $post["riwayat"];
+		$this->proker = $post["proker"];
 		$this->visi = $post["visi"];
 		$this->misi = $post["misi"];
 		$this->foto = $this->_uploadImage();
+
 		$this->db->insert('tb_calon', $this);
 		if ($this->db->affected_rows() > 0) {
 			return true;

@@ -42,9 +42,14 @@
                     <?php $no = 1;
                     foreach ($data->result_array() as $i) :
                         $id = $i['id'];
+                        $nim = $i['nim'];
+                        $namacalon = $i['namacalon'];
+                        $jurusan = $i['jurusan'];
+                        $asalkampus = $i['asalkampus'];
+                        $riwayat = $i['riwayat'];
+                        $proker = $i['proker'];
                         $visi = $i['visi'];
                         $misi = $i['misi'];
-                        $namacalon = $i['namacalon'];
                         $foto = $i['foto'];
                         $totalsuara = $i['totalsuara'];
                     ?>
@@ -90,32 +95,62 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
-                                        <h2><i class="fa fa-pencil"></i>&nbsp; Pemilih</h2>
+                                        <h2><i class="fa fa-pencil"></i>&nbsp; Data Calon</h2>
                                     </div>
 
                                     <div class="modal-body">
                                         <?= form_open_multipart('datacal/edit/' . $id); ?>
                                         <input type="hidden" name="id" value="<?= $id; ?>">
                                         <div class="row form-group">
-                                            <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama</label></div>
-                                            <div class="col-12 col-md-9">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>
+                                            <div class="col-12">
+                                                <input type="number" id="nim" name="nim" placeholder="NIM . . ." class="form-control" maxlength="8" value="<?= $nim; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Nama</label></b></div>
+                                            <div class="col-12">
                                                 <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon" class="form-control" value="<?= $namacalon; ?>">
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Visi</label></div>
-                                            <div class="col-12 col-md-9">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Jurusan</label></b></div>
+                                            <div class="col-12">
+                                                <input type="text" id="jurusan" name="jurusan" placeholder="Jurusan . . ." class="form-control" value="<?= $jurusan; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Asal Kampus</label></b></div>
+                                            <div class="col-12">
+                                                <input type="text" id="asalkampus" name="asalkampus" placeholder="Asal Kampus . . ." class="form-control" value="<?= $asalkampus; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Riwayat Organisasi</label></b></div>
+                                            <div class="col-12">
+                                                <textarea class="form-control" id="riwayat" name="riwayat" rows="6" cols="50"><?= $riwayat ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-4"><b><label for="disabled-input" class=" form-control-label">Program Kerja Unggulan</label></b></div>
+                                            <div class="col-12">
+                                                <textarea class="form-control" id="proker" name="proker" rows="6" cols="50"><?= $proker ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Visi</label></b></div>
+                                            <div class="col-12">
                                                 <textarea class="form-control" id="visiedit" name="visi" rows="6" cols="50"><?= $visi ?></textarea>
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Misi</label></div>
-                                            <div class="col-12 col-md-9">
+                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Misi</label></b></div>
+                                            <div class="col-12">
                                                 <textarea class="form-control" id="misiedit" name="misi" rows="6" cols="50"><?= $misi ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="name">Foto</label>
+                                            <b><label for="name">Foto</label></b>
                                             <input class="form-control-file" type="file" name="image" id="image" />
                                         </div>
                                     </div>
@@ -143,15 +178,45 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
-                        <h2><i class="fa fa-plus-circle"></i>&nbsp; Calon</h2>
+                        <h2><i class="fa fa-plus-circle"></i>&nbsp; Data Calon</h2>
                     </div>
 
                     <?= form_open_multipart('datacal/insert'); ?>
                     <div class="modal-body">
                         <div class="row form-group">
+                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>
+                            <div class="col-12">
+                                <input type="number" id="nim" name="nim" placeholder="NIM . . ." class="form-control" maxlength="8">
+                            </div>
+                        </div>
+                        <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Nama</label></b></div>
                             <div class="col-12">
                                 <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon . . ." class="form-control">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Jurusan</label></b></div>
+                            <div class="col-12">
+                                <input type="text" id="jurusan" name="jurusan" placeholder="Jurusan . . ." class="form-control">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Asal Kampus</label></b></div>
+                            <div class="col-12">
+                                <input type="text" id="asalkampus" name="asalkampus" placeholder="Asal Kampus . . ." class="form-control">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Riwayat Organisasi</label></b></div>
+                            <div class="col-12">
+                                <textarea class="form-control" id="riwayat" name="riwayat"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-4"><b><label for="disabled-input" class=" form-control-label">Program Kerja Unggulan</label></b></div>
+                            <div class="col-12">
+                                <textarea class="form-control" id="proker" name="proker"></textarea>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -188,8 +253,20 @@
             CKEDITOR.replace('misi');
         </script>
         <script>
+            CKEDITOR.replace('riwayat');
+        </script>
+        <script>
+            CKEDITOR.replace('proker');
+        </script>
+        <script>
             CKEDITOR.replace('visiedit');
         </script>
         <script>
             CKEDITOR.replace('misiedit');
+        </script>
+        <script>
+            CKEDITOR.replace('riwayatedit');
+        </script>
+        <script>
+            CKEDITOR.replace('prokeredit');
         </script>

@@ -82,8 +82,10 @@ class Datapem extends CI_Controller
 
 	public function resetpilihan()
 	{
-		$result = $this->db->query('Update tb_siswa SET suara = 0');
-		if ($result) {
+		$result = $this->db->query('UPDATE tb_siswa SET suara = 0');
+		$result2 = $this->db->query('UPDATE tb_calon SET totalsuara = 0');
+
+		if ($result && $result2) {
 			$this->session->set_flashdata('success_msg', 'Berhasil reset pilihan');
 		} else {
 			$this->session->set_flashdata('error_msg', 'Oops! Terjadi suatu kesalahan.');
