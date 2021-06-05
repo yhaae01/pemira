@@ -74,8 +74,8 @@
                                         </center><br>
                                         <div>
                                             <a class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#pilih<?= $id; ?>" href="">Pilih</a>
-                                            <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#visimisi<?= $id; ?>" href="">Visi & Misi</a>
                                             <a class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#biodata<?= $id; ?>" href="">Biodata</a>
+                                            <a class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#visimisi<?= $id; ?>" href="">Visi Misi & Proker</a>
                                         </div>
                                         </center>
                                     </li>
@@ -131,6 +131,12 @@
                                                 <h4>Misi :</h4>
                                                 <hr>
                                                 <p><?= $misi; ?></p>
+                                            </div>
+                                            <hr>
+                                            <div class="box">
+                                                <h4>Program Kerja Unggulan :</h4>
+                                                <hr>
+                                                <p><?= $proker; ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -245,12 +251,6 @@
                                                 <h4>Riwayat Organisasi :</h4>
                                                 <hr>
                                                 <p><?= $riwayat; ?></p>
-                                            </div>
-                                            <hr>
-                                            <div class="box">
-                                                <h4>Program Kerja Unggulan :</h4>
-                                                <hr>
-                                                <p><?= $proker; ?></p>
                                             </div>
                                         </div>
                                     </div>
