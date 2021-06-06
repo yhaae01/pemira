@@ -12,9 +12,8 @@ class M_pemilih extends CI_Model
 	function insert_data()
 	{
 		$field = array(
-			// 'id' => uniqid(),
 			'nis' => $this->input->post('nis'),
-			'password' => md5($this->input->post('password')),
+			'password' => $this->input->post('password'),
 			'namasiswa' => $this->input->post('nama'),
 			'suara' => '0',
 			'absen' => '0'
@@ -75,69 +74,7 @@ class M_pemilih extends CI_Model
 	{
 		$this->db->where('id', $id);
 		$field = array(
-			'namasiswa' => $this->input->post('nama'),
-			// 'kelas' => $this->input->post('kelas'),
-		);
-		$this->db->update('tb_siswa', $field);
-
-		if ($this->db->affected_rows() > 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public function editabsen($id)
-	{
-		$pengaw = $this->session->userdata('id');
-		$field = array(
-			'absen' => $id
-		);
-
-		$this->db->where('id', $id);
-		$this->db->update('tb_siswa', $field);
-
-		if ($this->db->affected_rows() > 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public function editabsenbatal($id)
-	{
-		$this->db->where('id', $id);
-		$field = array(
-			'absen' => '0'
-		);
-		$this->db->update('tb_siswa', $field);
-
-		if ($this->db->affected_rows() > 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public function reset($id)
-	{
-
-		$hasil = $this->db->query("SELECT suara  FROM tb_siswa where id='$id'");
-		foreach ($hasil->result_array() as $i) :
-			$k = $i['suara'];
-
-			$hasil2 = $this->db->query("SELECT totalsuara  FROM tb_calon where id='$k'");
-			foreach ($hasil2->result_array() as $i) :
-				$l = $i['totalsuara'];
-				$l = $l - 1;
-
-				$this->db->query("UPDATE tb_calon set totalsuara='$l' where id='$k'");
-			endforeach;
-		endforeach;
-
-		$this->db->where('id', $id);
-		$field = array(
-			'suara' => '0',
+			'namasiswa' => $this->input->post('nama')
 		);
 		$this->db->update('tb_siswa', $field);
 
