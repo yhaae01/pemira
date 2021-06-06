@@ -4,7 +4,7 @@
         <hr>
         <div class="row">
             <div class="col">
-                <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#tambahdata"><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button> -->
+                <button class="btn btn-primary" data-toggle="modal" data-target="#tambahdata"><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button>
                 <button class="btn btn-danger" data-toggle="modal" data-target="#truncate"><i class="fa fa-trash"></i>&nbsp; Kosongkan</button>
                 <button class="btn btn-success" data-toggle="modal" data-target="#absen"><i class="fa fa-check"></i>&nbsp; Absen</button>
                 <button class="btn btn-secondary" data-toggle="modal" data-target="#batalabsen"><i class="fa fa-times"></i>&nbsp; Batal Absen</button>
@@ -40,7 +40,6 @@
                         <th>No</th>
                         <th>NIM</th>
                         <th>Nama Pemilih</th>
-                        <!-- <th>Kelas</th> -->
                         <th>Absen</th>
                         <th>Suara</th>
                         <th width="150">
@@ -61,7 +60,7 @@
                         <tr>
                             <td style="text-align: center;"><?= "$no" ?></td>
                             <td><?= $nis; ?> </td>
-                            <td><?= ucwords($namasiswa); ?> </td>
+                            <td><?= strtoupper($namasiswa); ?> </td>
                             <td style="text-align: center;"><?php
                                                             if ($absen == '0') {
                                                             ?>

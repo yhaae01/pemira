@@ -34,7 +34,7 @@
             <li class="breadcrumb-item">
                 <div class="row">
                     <div class="col-3"><img src="<?= base_url('assets/img/logo2.png'); ?>"></div>
-                    <div class="col-9 text-right"><b>Selamat Datang : <?= ucwords($this->session->userdata('nama')); ?> </b><br>Silahkan pilih calon ketua BEM UBSI BOGOR dibawah ini...</div>
+                    <div class="col-9 text-right"><b>Selamat Datang : <?= strtoupper($this->session->userdata('nama')); ?> </b><br>Silahkan pilih calon ketua BEM UBSI BOGOR dibawah ini...</div>
                 </div>
             </li>
         </ol>
@@ -61,7 +61,7 @@
                             <form action="<?= base_url('index.php/form/pilih/' . $id . ''); ?>">
                                 <div class="card-header user-header alt bg-dark">
                                     <div class="media">
-                                        <h3 class="text-light display-6"><?= $no . '. ' . ucwords($namacalon); ?></h3>
+                                        <h3 class="text-light display-6"><?= $no . '. ' . strtoupper($namacalon); ?></h3>
                                     </div>
                                 </div>
 
@@ -109,7 +109,7 @@
                                     <span aria-hidden="true">×</span>
                                 </button>
                                 <div class="media">
-                                    <h1 class="text-light display-6"><?= $no . '. ' . ucwords($namacalon); ?></h1>
+                                    <h3 class="text-light display-6"><?= $no . '. ' . strtoupper($namacalon); ?></h3>
                                 </div>
                             </div>
 
@@ -177,7 +177,7 @@
                                         <span aria-hidden="true">×</span>
                                     </button>
                                     <div class="media">
-                                        <h1 class="text-light display-6"><?= $no . '. ' . ucwords($namacalon); ?></h1>
+                                        <h3 class="text-light display-6"><?= $no . '. ' . strtoupper($namacalon); ?></h3>
                                     </div>
                                 </div>
 
@@ -224,7 +224,7 @@
                                     <span aria-hidden="true">×</span>
                                 </button>
                                 <div class="media">
-                                    <h2 class="text-light display-6"><?= $no . '. ' . ucwords($namacalon); ?> - <?= $nim; ?></h2>
+                                    <h3 class="text-light display-6"><?= $no . '. ' . strtoupper($namacalon); ?> - <?= $nim; ?></h3>
                                 </div>
                             </div>
 
@@ -238,13 +238,13 @@
                                             <div class="box">
                                                 <h4>Asal Kampus :</h4>
                                                 <hr>
-                                                <p><?= $asalkampus; ?></p>
+                                                <p><?= strtoupper($asalkampus); ?></p>
                                             </div>
                                             <hr>
                                             <div class="box">
                                                 <h4>Jurusan :</h4>
                                                 <hr>
-                                                <p><?= $jurusan; ?></p>
+                                                <p><?= strtoupper($jurusan); ?></p>
                                             </div>
                                             <hr>
                                             <div class="box">
