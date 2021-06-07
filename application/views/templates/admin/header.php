@@ -6,20 +6,15 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
 
-    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
-    <link rel="shortcut icon" href="assets/img/bem-logo.png">
+    <link rel="apple-touch-icon" href="<?= base_url(); ?>assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/bem-logo.png">
 
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="assets/datatable/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="assets/datatable/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/datatables.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 
 </head>
 
@@ -50,7 +45,7 @@
                     <li class="menu-item">
                         <a href="Datacal"> <i class="menu-icon fa fa-id-badge"></i>Data Calon</a>
                         <!-- <a href="Datapeng"> <i class="menu-icon fa fa-eye"></i>Data Pengawas</a> -->
-                        <a href="Datapem"> <i class="menu-icon fa fa-user"></i>Data Pemilih</a>
+                        <a href="DataMahasiswa"> <i class="menu-icon fa fa-user"></i>Data Mahasiswa</a>
                         <a href="" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#konfirmkeluar"> <i class="menu-icon fa fa-times"></i>Keluar</a>
                     </li>
                 </ul>

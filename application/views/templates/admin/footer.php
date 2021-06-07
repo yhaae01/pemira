@@ -34,17 +34,46 @@
     </div>
     <!-- /#right-panel -->
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <script type="text/javascript" src="assets/datatable/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/datatable/js/jquery.dataTables.js"></script>
+    <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
+    <script src="<?= base_url(); ?>assets/js/popper.min.js"></script>
+    <script src="<?= base_url(); ?>assets/js/plugins.js"></script>
+    <script src="<?= base_url(); ?>assets/js/main.js"></script>
+    <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>assets/js/datatables.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
             $('.dataku').DataTable();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#mytable').DataTable({
+                "serverSide": true,
+                "processing": true,
+                "ajax": {
+                    url: "<?php echo base_url("DataMahasiswa/json") ?>",
+                    type: 'post',
+                    dataType: 'json'
+                },
+                "columns": [{
+                        data: "id"
+                    },
+                    {
+                        data: "nim"
+                    },
+                    {
+                        data: "nama_mahasiswa"
+                    },
+                    {
+                        data: "absen"
+                    },
+                    {
+                        data: "suara"
+                    }
+                ]
+            });
         });
     </script>
 
