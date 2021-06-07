@@ -85,21 +85,21 @@ class DataMahasiswa extends CI_Controller
 
 	public function index()
 	{
-		$this->form_validation->set_rules('nis', 'NIM', 'trim|required|numeric|min_length[8]|is_unique[tb_mahasiswa.nis]|matches[password]', [
+		$this->form_validation->set_rules('nim', 'NIM', 'trim|required|numeric|min_length[8]|is_unique[tb_mahasiswa.nim]|matches[password]', [
 			'required' => 'NIM tidak boleh kosong!',
 			'min_length' => 'NIM minimal 6 karakter!',
 			'numeric' => 'Hanya bisa menggunakan angka!',
 			'is_unique' => 'NIM sudah digunakan!',
 			'matches' => 'NIM harus sama seperti Password!'
 		]);
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|matches[nis]', [
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|matches[nim]', [
 			'required' => 'Password tidak boleh kosong!',
 			'min_length' => 'Password minimal 6 karakter!',
 			'matches' => 'Password harus sama seperti NIM!'
 		]);
-		$this->form_validation->set_rules('namasiswa', 'Nama', 'trim|required|max_length[50]', [
-			'required' => 'Nama tidak boleh kosong!',
-			'max_length' => 'Nama maksimal 50 karakter!'
+		$this->form_validation->set_rules('nama_mahasiswa', 'Nama Mahasiswa', 'trim|required|max_length[50]', [
+			'required' => 'Nama Mahasiswa tidak boleh kosong!',
+			'max_length' => 'Nama Mahasiswa maksimal 50 karakter!'
 		]);
 
 		if ($this->form_validation->run() == FALSE) {

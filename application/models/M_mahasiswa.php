@@ -12,7 +12,7 @@ class M_mahasiswa extends CI_Model
 	function insert_data()
 	{
 		$field = [
-			'nis' => $this->input->post('nis'),
+			'nim' => $this->input->post('nim'),
 			'password' => $this->input->post('password'),
 			'nama_mahasiswa' => $this->input->post('nama_mahasiswa'),
 			'suara' => '0',
@@ -26,7 +26,7 @@ class M_mahasiswa extends CI_Model
         Data mahasiswa berhasil ditambahkan.
         </div>'
 		);
-		redirect(base_url('Datapem'));
+		redirect(base_url('DataMahasiswa'));
 	}
 
 	public function deletesiswa($id)
