@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon" href="<?= base_url(); ?>assets/img/bem-logo.png">
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/bem-logo.png">
 
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/normalize.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/datatables.min.css">
