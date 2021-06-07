@@ -11,13 +11,11 @@ class M_pengawas extends CI_Model
 
 	function insert_data()
 	{
-		$field = array(
-			'id' => uniqid(),
+		$field = [
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
 			'namapengawas' => $this->input->post('namapengawas')
-
-		);
+		];
 		$this->db->insert('tb_pengawas', $field);
 		if ($this->db->affected_rows() > 0) {
 			return true;
@@ -31,13 +29,13 @@ class M_pengawas extends CI_Model
 		$this->db->where('id', $id);
 		$this->db->delete('tb_pengawas');
 
-
 		if ($this->db->affected_rows() > 0) {
 			return true;
 		} else {
 			return false;
 		}
 	}
+
 	public function truncate()
 	{
 		$this->db->query('TRUNCATE TABLE tb_pengawas');
@@ -47,6 +45,7 @@ class M_pengawas extends CI_Model
 			return false;
 		}
 	}
+
 	public function editpengawas($id)
 	{
 		$this->db->where('id', $id);
@@ -54,7 +53,6 @@ class M_pengawas extends CI_Model
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
 			'namapengawas' => $this->input->post('namapengawas')
-
 		);
 		$this->db->update('tb_pengawas', $field);
 

@@ -53,7 +53,7 @@
 
                     <li class="menu-item">
                         <a href="Datacal"> <i class="menu-icon fa fa-id-badge"></i>Data Calon</a>
-                        <a href="Datapeng"> <i class="menu-icon fa fa-eye"></i>Data Pengawas</a>
+                        <!-- <a href="Datapeng"> <i class="menu-icon fa fa-eye"></i>Data Pengawas</a> -->
                         <a href="Datapem"> <i class="menu-icon fa fa-user"></i>Data Pemilih</a>
                         <a href="" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#konfirmkeluar"> <i class="menu-icon fa fa-times"></i>Keluar</a>
                     </li>

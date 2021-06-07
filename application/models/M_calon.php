@@ -2,9 +2,6 @@
 
 class M_calon extends CI_Model
 {
-
-	private $_table = "tb_calon";
-
 	public $id;
 	public $namacalon;
 	public $visi;

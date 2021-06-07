@@ -11,13 +11,13 @@ class M_pemilih extends CI_Model
 
 	function insert_data()
 	{
-		$field = array(
+		$field = [
 			'nis' => $this->input->post('nis'),
 			'password' => $this->input->post('password'),
 			'namasiswa' => $this->input->post('nama'),
 			'suara' => '0',
 			'absen' => '0'
-		);
+		];
 
 		$this->db->insert('tb_siswa', $field);
 		if ($this->db->affected_rows() > 0) {
