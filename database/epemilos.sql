@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 07 Jun 2021 pada 21.27
+-- Waktu pembuatan: 07 Jun 2021 pada 23.20
 -- Versi server: 5.7.24
 -- Versi PHP: 7.2.19
 
@@ -65,7 +65,9 @@ CREATE TABLE `tb_calon` (
 --
 
 INSERT INTO `tb_calon` (`id`, `nim`, `namacalon`, `jurusan`, `asalkampus`, `riwayat`, `proker`, `visi`, `misi`, `foto`, `totalsuara`) VALUES
-(1, '12180308', 'surya intan', 'sistem informasi akuntansi', 'ubsi cilebut', '<p>ini riwayat ubah</p>', '<p>ini proker ubah</p>', '<p>ini adalah visi ubah</p>', '<p>Ini adalah misi ubah</p>', 'calon_1622872484.png', 0);
+(2, '12180308', 'surya intan permana', 'sistem informasi', 'ubsi bogor', '<p>-</p>', '<ol><li>Pertandingan Olahraga</li><li>Open Forum</li><li>Mawadahi dan Memfasilitasi Minat Mahasiswa</li><li>Melaksanakan Kegiatan Kampus</li><li>Menjalankan Program Kepentingan Masyarakat</li></ol>', '<p>Membentuk Badan Eksekutif Mahasiswa yang aktif sebagai pionir dalam pergerakan untuk mewujudkan mahasiswa yang berkompeten dan memiliki integritas terhadap problematika yang terjadi di tengah masyarakat.</p>', '<ol><li>Memotivasi sesama rekan mahasiswa agar menumbuhkan daya saing yang tinggi dan produktivitas yang berdampak di era teknologi yang dinamis di tengah masyarakat.</li><li>Menjadikan BEM sebagai mediator antara universitas dan mahasiswa dalam berkomunikasi dan berdiskusi, juga menjadi penampung dan pelaksana aspirasi mahasiswa.</li><li>Mendukung pertumbuhan mahasiswa yang memiliki intelektual tinggi dan keberanian yang besar dalam menanggapi segala bentuk perubahan.</li></ol>', 'calon_1623106474.png', 0),
+(4, '12180310', 'ahmad maulana', 'sistem informasi', 'ubsi bogor', '-', '-', '<p>Menjadikan BEM sebagai wadah penerima aspirasi mahasiswa, sekaligus penggerak dan pelaksana aspirasi mahasiswa yang relevan bagi mahasiswa dan universitas, juga menciptakan BEM sebagai organisasi yang jujur, adil, disiplin, dan berakhlak mulia dalam lingkup masyarakat maupun kampus.</p>', '<ol><li>Membuka diri terhadap masukan yang diberikan mahasiswa maupun universitas demi pengembangan diri BEM yang lebih baik untu kke depannya.</li><li>Mendukung kemajuan organisasi/ UKM yang berada di bawah naungan universitas.</li><li>Menjalin komunikasi yang harmonis dengan organisasi/ UKM secara internal maupun eksternal guna mewujudkan visi misi BEM dan juga visi dan misi organisasi/ UKM.</li></ol>', 'calon_1623106641.png', 0),
+(5, '12170000', 'aldi tegar prakoso', 'sistem informasi', 'ubsi bogor', '-', '-', '<p>Mewujudkan BEM yang independen, unggul, berkualitas, aspiratif, dan progresif, guna menunaikan tugas yang telah dipercayakan mahasiswa dan universitas kepada BEM</p>', '<ol><li>Menjadi sebuah wadah yang transparan bagi aspirasi mahasiswa dan menindaklanjuti aspirasi tersebut agar bisa diwujudkan secara nyata di lingkup universitas dan masyarakat.</li><li>Mengadakan kegiatan untuk pengembangan diri mahasiswa secara rutin, sehingga muncul bibit bibit unggul dari mahasiswa.</li><li>Menjadi organisasi yang mandiri terhadap pengadaan kegiatan, namun tetap bertanggung jawab baik terhadap universitas maupun mahasiswa.</li></ol>', 'calon_1623106867.png', 0);
 
 -- --------------------------------------------------------
 
@@ -1376,7 +1378,7 @@ ALTER TABLE `tb_pengawas`
 -- AUTO_INCREMENT untuk tabel `tb_calon`
 --
 ALTER TABLE `tb_calon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_mahasiswa`
