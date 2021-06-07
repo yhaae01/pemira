@@ -8,13 +8,13 @@ class Dasbor extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('M_calon', 'mc');
-		$this->load->model('M_pemilih', 'mp');
+		$this->load->model('M_Mahasiswa', 'mm');
 	}
 
 	public function index()
 	{
 		$x['data']			= $this->mc->show_calon();
-		$x['datapemilih']	= $this->mp->show_pemilih();
+		$x['datapemilih']	= $this->mm->show_pemilih();
 		$this->load->view('templates/admin/header');
 		$this->load->view('dashboard', $x);
 		$this->load->view('templates/admin/footer');
@@ -23,7 +23,7 @@ class Dasbor extends CI_Controller
 	public function export()
 	{
 		$x['data']			= $this->mc->show_calon();
-		$x['datapemilih']	= $this->mp->show_pemilih();
+		$x['datapemilih']	= $this->mm->show_pemilih();
 		$this->load->view('hasilpemilihanexport', $x);
 	}
 }
