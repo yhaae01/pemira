@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 07 Jun 2021 pada 12.51
+-- Waktu pembuatan: 07 Jun 2021 pada 21.27
 -- Versi server: 5.7.24
 -- Versi PHP: 7.2.19
 
@@ -65,48 +65,28 @@ CREATE TABLE `tb_calon` (
 --
 
 INSERT INTO `tb_calon` (`id`, `nim`, `namacalon`, `jurusan`, `asalkampus`, `riwayat`, `proker`, `visi`, `misi`, `foto`, `totalsuara`) VALUES
-(1, '12180308', 'surya intan permana', 'sistem informasi', 'ubsi bogor', '<p>ini riwayat</p>', '<p>ini proker</p>', '<p>ini adalah visi</p>', '<p>Ini adalah misi</p>', 'calon_1622872484.png', 0);
+(1, '12180308', 'surya intan', 'sistem informasi akuntansi', 'ubsi cilebut', '<p>ini riwayat ubah</p>', '<p>ini proker ubah</p>', '<p>ini adalah visi ubah</p>', '<p>Ini adalah misi ubah</p>', 'calon_1622872484.png', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengawas`
+-- Struktur dari tabel `tb_mahasiswa`
 --
 
-CREATE TABLE `tb_pengawas` (
-  `id` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `namapengawas` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_pengawas`
---
-
-INSERT INTO `tb_pengawas` (`id`, `username`, `password`, `namapengawas`) VALUES
-('5c91075cc2', 'fariz', '12', 'Fariz Andifa');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tb_siswa`
---
-
-CREATE TABLE `tb_siswa` (
+CREATE TABLE `tb_mahasiswa` (
   `id` int(11) NOT NULL,
-  `nis` int(11) DEFAULT NULL,
+  `nim` int(11) DEFAULT NULL,
   `password` varchar(8) DEFAULT NULL,
-  `namasiswa` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `nama_mahasiswa` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `absen` int(11) DEFAULT NULL,
   `suara` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_siswa`
+-- Dumping data untuk tabel `tb_mahasiswa`
 --
 
-INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `absen`, `suara`) VALUES
+INSERT INTO `tb_mahasiswa` (`id`, `nim`, `password`, `nama_mahasiswa`, `absen`, `suara`) VALUES
 (1, 11200044, '11200044', 'RIKA RUMAWATI', 0, 0),
 (2, 11200098, '11200098', 'SITI ARIFAH', 0, 0),
 (3, 11200125, '11200125', 'ANDIKA MARDIANSYAH', 0, 0),
@@ -1106,7 +1086,7 @@ INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `absen`, `suara`) 
 (997, 12182309, '12182309', 'PYNTHIA CHRISTIANA', 0, 0),
 (998, 12182319, '12182319', 'ARIFNURDIANSYAH', 0, 0),
 (999, 12182337, '12182337', 'FEBRY DARA', 0, 0);
-INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `absen`, `suara`) VALUES
+INSERT INTO `tb_mahasiswa` (`id`, `nim`, `password`, `nama_mahasiswa`, `absen`, `suara`) VALUES
 (1000, 12182360, '12182360', 'FAKHRIZA ARDAFIE', 0, 0),
 (1001, 12182380, '12182380', 'MUHAMAD ROSALVIN', 0, 0),
 (1002, 12182423, '12182423', 'DEA RATNA', 0, 0),
@@ -1339,6 +1319,26 @@ INSERT INTO `tb_siswa` (`id`, `nis`, `password`, `namasiswa`, `absen`, `suara`) 
 (1229, 12185171, '12185171', 'HENDRIK', 0, 0),
 (1230, 12185218, '12185218', 'ADAM AGUNG', 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pengawas`
+--
+
+CREATE TABLE `tb_pengawas` (
+  `id` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `namapengawas` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_pengawas`
+--
+
+INSERT INTO `tb_pengawas` (`id`, `username`, `password`, `namapengawas`) VALUES
+('5c91075cc2', 'fariz', '12', 'Fariz Andifa');
+
 --
 -- Indexes for dumped tables
 --
@@ -1357,15 +1357,15 @@ ALTER TABLE `tb_calon`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pengawas`
+-- Indeks untuk tabel `tb_mahasiswa`
 --
-ALTER TABLE `tb_pengawas`
+ALTER TABLE `tb_mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_siswa`
+-- Indeks untuk tabel `tb_pengawas`
 --
-ALTER TABLE `tb_siswa`
+ALTER TABLE `tb_pengawas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1379,9 +1379,9 @@ ALTER TABLE `tb_calon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_siswa`
+-- AUTO_INCREMENT untuk tabel `tb_mahasiswa`
 --
-ALTER TABLE `tb_siswa`
+ALTER TABLE `tb_mahasiswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1231;
 COMMIT;
 
