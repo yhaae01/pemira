@@ -53,6 +53,7 @@ class M_calon extends CI_Model
         </div>'
 		);
 		$this->db->insert('tb_calon', $this);
+		redirect('DataCalon');
 	}
 
 	public function editcalon()
@@ -87,12 +88,12 @@ class M_calon extends CI_Model
 
 	public function deletecalon($id)
 	{
-		$hasil = $this->db->query("SELECT * FROM tb_siswa");
+		$hasil = $this->db->query("SELECT * FROM tb_mahasiswa");
 		foreach ($hasil->result_array() as $i) :
 			$r = $i['id'];
 			$k = $i['suara'];
 			if ($k == $id) {
-				$this->db->query("UPDATE tb_siswa set suara='0' where id='$r'");
+				$this->db->query("UPDATE tb_mahasiswa set suara='0' where id='$r'");
 			};
 		endforeach;
 
@@ -125,7 +126,7 @@ class M_calon extends CI_Model
 			'suara' => $id
 		);
 		$this->db->where('nis', $loginnis);
-		$this->db->update('tb_siswa', $field2);
+		$this->db->update('tb_mahasiswa', $field2);
 
 		if ($this->db->affected_rows() > 0) {
 			return true;

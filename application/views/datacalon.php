@@ -140,13 +140,13 @@
                                         <div class="row form-group">
                                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Riwayat Organisasi</label></b></div>
                                             <div class="col-12">
-                                                <textarea class="form-control" id="riwayat" name="riwayat" rows="6" cols="50"><?= $riwayat ?></textarea>
+                                                <textarea class="form-control" id="riwayatedit" name="riwayat" rows="6" cols="50"><?= $riwayat ?></textarea>
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-md-4"><b><label for="disabled-input" class=" form-control-label">Program Kerja Unggulan</label></b></div>
                                             <div class="col-12">
-                                                <textarea class="form-control" id="proker" name="proker" rows="6" cols="50"><?= $proker ?></textarea>
+                                                <textarea class="form-control" id="prokeredit" name="proker" rows="6" cols="50"><?= $proker ?></textarea>
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -222,25 +222,25 @@
                         <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Riwayat Organisasi</label></b></div>
                             <div class="col-12">
-                                <textarea class="form-control" id="riwayat" name="riwayat"></textarea>
+                                <textarea class="form-control" id="editor1" name="riwayat" rows="10" cols="80"></textarea>
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-4"><b><label for="disabled-input" class=" form-control-label">Program Kerja Unggulan</label></b></div>
                             <div class="col-12">
-                                <textarea class="form-control" id="proker" name="proker"></textarea>
+                                <textarea class="form-control" id="editor2" name="proker" rows="10" cols="80"></textarea>
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Visi</label></b></div>
                             <div class="col-12">
-                                <textarea class="form-control" id="visi" name="visi"></textarea>
+                                <textarea class="form-control" id="visi" name="visi" rows="10" cols="80"></textarea>
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Misi</label></b></div>
                             <div class="col-12">
-                                <textarea class="form-control" id="misi" name="misi"></textarea>
+                                <textarea class="form-control" id="misi" name="misi" rows="10" cols="80"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -257,28 +257,15 @@
             </div>
         </div>
 
-        <script src="assets/js/ckeditor/ckeditor.js"></script>
-        <script>
+        <script type="text/javascript" src="assets/js/ckeditor/ckeditor.js"></script>
+
+        <script type="text/javascript">
+            CKEDITOR.replace('editor1');
+            CKEDITOR.replace('editor2');
             CKEDITOR.replace('visi');
-        </script>
-        <script>
             CKEDITOR.replace('misi');
-        </script>
-        <script>
-            CKEDITOR.replace('riwayat');
-        </script>
-        <script>
-            CKEDITOR.replace('proker');
-        </script>
-        <script>
             CKEDITOR.replace('visiedit');
-        </script>
-        <script>
             CKEDITOR.replace('misiedit');
-        </script>
-        <script>
             CKEDITOR.replace('riwayatedit');
-        </script>
-        <script>
             CKEDITOR.replace('prokeredit');
         </script>
