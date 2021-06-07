@@ -24,11 +24,11 @@ class Welcome extends CI_Controller
 			'password' => $password
 		);
 		$where2 = array(
-			'nis' => $username,
+			'nim' => $username,
 			'password' =>  $password
 		);
 		$cek = $this->M_login->cek_login("admin", $where)->num_rows();
-		$cek2 = $this->M_login->cek_login("tb_siswa", $where2)->num_rows();
+		$cek2 = $this->M_login->cek_login("tb_mahasiswa", $where2)->num_rows();
 		$cek3 = $this->M_login->cek_login("tb_pengawas", $where)->num_rows();
 		if ($cek > 0) {
 
@@ -43,15 +43,15 @@ class Welcome extends CI_Controller
 			redirect(base_url("Dasbor"));
 		} else if ($cek2 > 0) {
 
-			$hasil = $this->db->query("SELECT *  FROM tb_siswa where nis='$username'");
+			$hasil = $this->db->query("SELECT *  FROM tb_mahasiswa where nim='$username'");
 			foreach ($hasil->result_array() as $i) :
 				$k = $i['suara'];
 				$ab = $i['absen'];
 
 				if ($ab != '0' && $k == 0) {
 					$data_session = array(
-						'nis' => $username,
-						'nama' => $i['namasiswa'],
+						'nim' => $username,
+						'nama_mahasiswa' => $i['nama_mahasiswa'],
 						'status' => "loginsiswa"
 					);
 					$this->session->set_userdata($data_session);

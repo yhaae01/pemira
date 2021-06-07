@@ -219,7 +219,7 @@
                         <h4 class="modal-title" id="staticModalLabel">Konfirmasi</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Jika Anda menghapus semua data Mahasiswa maka hasil Mahasiswaan juga akan direset... </p>
+                        <p>Jika Anda menghapus semua data Mahasiswa maka hasil Pemilihan juga akan direset... </p>
                         <p>Apakah anda yakin ingin menghapus semua data Mahasiswa ?</p>
                     </div>
                     <div class="modal-footer">

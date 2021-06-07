@@ -41,6 +41,9 @@
     <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/datatables.min.js"></script>
 
+    <script src="<?= base_url(); ?>assets/datatable/js/jquery.js"></script>
+    <script src="<?= base_url(); ?>assets/datatable/js/jquery.dataTables.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('.dataku').DataTable();
