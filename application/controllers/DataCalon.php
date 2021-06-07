@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Datacal extends CI_Controller
+class DataCalon extends CI_Controller
 {
 
 	function __construct()
@@ -44,7 +44,7 @@ class Datacal extends CI_Controller
 			$x['data'] = $this->mc->show_calon();
 
 			$this->load->view('templates/admin/header');
-			$this->load->view('datacalon', $x);
+			$this->load->view('DataCalon', $x);
 			$this->load->view('templates/admin/footer');
 		} else {
 			$this->mc->insert_data();
@@ -93,6 +93,6 @@ class Datacal extends CI_Controller
 		} else {
 			$this->session->set_flashdata('error_msg', 'Gagal menghapus data');
 		}
-		redirect(base_url('Datacal'));
+		redirect(base_url('DataCalon'));
 	}
 }

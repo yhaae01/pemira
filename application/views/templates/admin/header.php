@@ -44,7 +44,7 @@
                     <li class="menu-title">Menu</li><!-- /.menu-title -->
 
                     <li class="menu-item">
-                        <a href="Datacal"> <i class="menu-icon fa fa-id-badge"></i>Data Calon</a>
+                        <a href="DataCalon"> <i class="menu-icon fa fa-id-badge"></i>Data Calon</a>
                         <!-- <a href="Datapeng"> <i class="menu-icon fa fa-eye"></i>Data Pengawas</a> -->
                         <a href="DataMahasiswa"> <i class="menu-icon fa fa-user"></i>Data Mahasiswa</a>
                         <a href="" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#konfirmkeluar"> <i class="menu-icon fa fa-times"></i>Keluar</a>

@@ -9,7 +9,7 @@
                 <?= form_error('asalkampus', '<div class="alert alert-danger">', '</div>'); ?>
                 <?= form_error('riwayat', '<div class="alert alert-danger">', '</div>'); ?>
                 <?= form_error('proker', '<div class="alert alert-danger">', '</div>'); ?>
-                <?= form_error('vsii', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('visi', '<div class="alert alert-danger">', '</div>'); ?>
                 <?= form_error('misi', '<div class="alert alert-danger">', '</div>'); ?>
                 <?= $this->session->flashdata('message'); ?>
 
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                                        <form action="<?= base_url('datacal/delete/') . $i['id'] ?>">
+                                        <form action="<?= base_url('DataCalon/delete/') . $i['id'] ?>">
                                             <input type="submit" class="btn btn-primary" value="Ya">
                                         </form>
                                     </div>
@@ -111,7 +111,7 @@
                                     </div>
 
                                     <div class="modal-body">
-                                        <?= form_open_multipart('datacal/edit/' . $id); ?>
+                                        <?= form_open_multipart('DataCalon/edit/' . $id); ?>
                                         <input type="hidden" name="id" value="<?= $id; ?>">
                                         <div class="row form-group">
                                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>
@@ -193,7 +193,7 @@
                         <h2><i class="fa fa-plus-circle"></i>&nbsp; Data Calon</h2>
                     </div>
 
-                    <?= form_open_multipart('datacal'); ?>
+                    <?= form_open_multipart('DataCalon'); ?>
                     <div class="modal-body">
                         <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>

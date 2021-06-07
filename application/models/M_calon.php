@@ -82,7 +82,7 @@ class M_calon extends CI_Model
         Berhasil diubah!
         </div>'
 		);
-		redirect('Datacal');
+		redirect('DataCalon');
 	}
 
 	public function deletecalon($id)
