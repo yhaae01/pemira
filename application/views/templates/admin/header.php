@@ -15,11 +15,7 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
 
-    <link href="assets/weather/css/weather-icons.css" rel="stylesheet" />
-    <link href="assets/calendar/fullcalendar.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/css/charts/chartist.min.css" rel="stylesheet">
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/datatable/css/jquery.dataTables.css">

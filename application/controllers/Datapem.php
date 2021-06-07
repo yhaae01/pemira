@@ -3,31 +3,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Datapem extends CI_Controller
 {
-
-
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->library('form_validation');
 		$this->load->model('M_pemilih', 'mp');
 	}
 
 	public function index()
 	{
-		$x['data'] = $this->mp->show_pemilih();
-		$this->load->view('templates/admin/header');
-		$this->load->view('datapemilih', $x);
-		$this->load->view('templates/admin/footer');
-	}
+		$this->form_validation->set_rules('nis', 'NIM', 'trim|required|numeric|min_length[8]|is_unique[tb_siswa.nis]|matches[password]', [
+			'required' => 'NIM tidak boleh kosong!',
+			'min_length' => 'NIM minimal 6 karakter!',
+			'numeric' => 'Hanya bisa menggunakan angka!',
+			'is_unique' => 'NIM sudah digunakan!',
+			'matches' => 'NIM harus sama seperti Password!'
+		]);
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|matches[nis]', [
+			'required' => 'Password tidak boleh kosong!',
+			'min_length' => 'Password minimal 6 karakter!',
+			'matches' => 'Password harus sama seperti NIM!'
+		]);
+		$this->form_validation->set_rules('namasiswa', 'Nama', 'trim|required|max_length[100]', [
+			'required' => 'Nama tidak boleh kosong!',
+			'max_length' => 'Nama maksimal 100 karakter!'
+		]);
 
-	function insert()
-	{
-		$result = $this->mp->insert_data();
-		if ($result) {
-			$this->session->set_flashdata('success_msg', 'Data berhasil ditambah');
+		if ($this->form_validation->run() == FALSE) {
+			$x['data'] = $this->mp->show_pemilih();
+
+			$this->load->view('templates/admin/header');
+			$this->load->view('datapemilih', $x);
+			$this->load->view('templates/admin/footer');
 		} else {
-			$this->session->set_flashdata('error_msg', 'Gagal menambah data');
+			$this->mp->insert_data();
 		}
-		redirect(base_url('Datapem'));
 	}
 
 	public function edit($id)

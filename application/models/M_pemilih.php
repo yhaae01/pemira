@@ -14,17 +14,19 @@ class M_pemilih extends CI_Model
 		$field = [
 			'nis' => $this->input->post('nis'),
 			'password' => $this->input->post('password'),
-			'namasiswa' => $this->input->post('nama'),
+			'namasiswa' => $this->input->post('namasiswa'),
 			'suara' => '0',
 			'absen' => '0'
 		];
 
 		$this->db->insert('tb_siswa', $field);
-		if ($this->db->affected_rows() > 0) {
-			return true;
-		} else {
-			return false;
-		}
+		$this->session->set_flashdata(
+			'message',
+			'<div class="alert alert-success" role="alert">
+        Data mahasiswa berhasil ditambahkan.
+        </div>'
+		);
+		redirect(base_url('Datapem'));
 	}
 
 	public function deletesiswa($id)

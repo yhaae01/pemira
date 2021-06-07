@@ -46,12 +46,13 @@ class M_calon extends CI_Model
 		$this->misi = $post["misi"];
 		$this->foto = $this->_uploadImage();
 
+		$this->session->set_flashdata(
+			'message',
+			'<div class="alert alert-success" role="alert">
+        Data calon berhasil ditambahkan.
+        </div>'
+		);
 		$this->db->insert('tb_calon', $this);
-		if ($this->db->affected_rows() > 0) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 	public function editcalon()

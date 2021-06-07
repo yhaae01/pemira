@@ -2,7 +2,19 @@
         <h1><i class="fa fa-users"> </i> DATA CALON</h1>
         <hr>
         <div class="row">
-            <div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata"><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button></div>
+            <div class="col">
+                <?= form_error('nim', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('namacalon', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('jurusan', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('asalkampus', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('riwayat', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('proker', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('vsii', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('misi', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= $this->session->flashdata('message'); ?>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata"><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button>
+            </div>
         </div>
         <hr>
         <?php if ($this->session->flashdata('success_msg')) {
@@ -181,7 +193,7 @@
                         <h2><i class="fa fa-plus-circle"></i>&nbsp; Data Calon</h2>
                     </div>
 
-                    <?= form_open_multipart('datacal/insert'); ?>
+                    <?= form_open_multipart('datacal'); ?>
                     <div class="modal-body">
                         <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>

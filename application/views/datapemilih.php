@@ -4,6 +4,11 @@
         <hr>
         <div class="row">
             <div class="col">
+                <?= form_error('nis', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('namasiswa', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= form_error('password', '<div class="alert alert-danger">', '</div>'); ?>
+                <?= $this->session->flashdata('message'); ?>
+
                 <button class="btn btn-primary" data-toggle="modal" data-target="#tambahdata"><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button>
                 <button class="btn btn-danger" data-toggle="modal" data-target="#truncate"><i class="fa fa-trash"></i>&nbsp; Kosongkan</button>
                 <button class="btn btn-success" data-toggle="modal" data-target="#absen"><i class="fa fa-check"></i>&nbsp; Absen</button>
@@ -173,24 +178,24 @@
                         <h2><i class="fa fa-plus-circle"></i>&nbsp; Pemilih</h2>
                     </div>
 
-                    <form action="datapem/insert" method="post">
+                    <form action="<?= base_url("datapem"); ?>" method="post">
                         <div class="modal-body">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">NIM</label></div>
                                 <div class="col-12">
-                                    <input type="text" id="nis" name="nis" placeholder="NIM . . ." autocomplete="no" required class="form-control">
+                                    <input type="text" id="nis" name="nis" placeholder="NIM . . ." maxlength="8" class="form-control">
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Password</label></div>
                                 <div class="col-12">
-                                    <input type="password" id="password" name="password" placeholder="Password . . ." class="form-control">
+                                    <input type="password" id="password" name="password" placeholder="Password . . ." maxlength="8" class="form-control">
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Pemilih</label></div>
                                 <div class="col-12">
-                                    <input type="text" id="nama" name="nama" placeholder="Nama . . ." autocomplete="no" class="form-control">
+                                    <input type="text" id="namasiswa" name="namasiswa" placeholder="Nama . . ." autocomplete="no" class="form-control">
                                 </div>
                             </div>
                         </div>
