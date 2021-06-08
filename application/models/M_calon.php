@@ -66,6 +66,7 @@ class M_calon extends CI_Model
 		$proker  	= $this->input->post('proker');
 		$visi   	= $this->input->post('visi');
 		$misi   	= $this->input->post('misi');
+		$foto		= $this->_uploadImage();
 
 		$this->db->set('namacalon', $namacalon);
 		$this->db->set('jurusan', $jurusan);
@@ -74,6 +75,7 @@ class M_calon extends CI_Model
 		$this->db->set('proker', $proker);
 		$this->db->set('visi', $visi);
 		$this->db->set('misi', $misi);
+		$this->db->set('foto', $foto);
 		$this->db->where('id', $id);
 		$this->db->update('tb_calon');
 

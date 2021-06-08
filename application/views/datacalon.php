@@ -41,8 +41,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Calon</th>
-                        <th>Visi</th>
-                        <th>Misi</th>
                         <th>Foto</th>
                         <th>Suara</th>
                         <th width="150">
@@ -53,23 +51,21 @@
                 <tbody>
                     <?php $no = 1;
                     foreach ($data->result_array() as $i) :
-                        $id = $i['id'];
-                        $nim = $i['nim'];
-                        $namacalon = $i['namacalon'];
-                        $jurusan = $i['jurusan'];
+                        $id         = $i['id'];
+                        $nim        = $i['nim'];
+                        $namacalon  = $i['namacalon'];
+                        $jurusan    = $i['jurusan'];
                         $asalkampus = $i['asalkampus'];
-                        $riwayat = $i['riwayat'];
-                        $proker = $i['proker'];
-                        $visi = $i['visi'];
-                        $misi = $i['misi'];
-                        $foto = $i['foto'];
+                        $riwayat    = $i['riwayat'];
+                        $proker     = $i['proker'];
+                        $visi       = $i['visi'];
+                        $misi       = $i['misi'];
+                        $foto       = $i['foto'];
                         $totalsuara = $i['totalsuara'];
                     ?>
                         <tr>
                             <td><?= "$no" ?></td>
                             <td><?= ucwords($namacalon); ?> </td>
-                            <td><?= $visi; ?> </td>
-                            <td><?= $misi; ?> </td>
                             <td><img src="<?= base_url('assets/img/calon/' . $foto) ?>" width="64"> </td>
                             <td><?= $totalsuara; ?> </td>
                             <td>
@@ -163,7 +159,7 @@
                                         </div>
                                         <div class="form-group">
                                             <b><label for="name">Foto</label></b>
-                                            <input class="form-control-file" type="file" name="image" id="image" />
+                                            <input class="form-control-file" type="file" name="upfoto" id="upfoto" />
                                         </div>
                                     </div>
                                     <div class="modal-footer">
