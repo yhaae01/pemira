@@ -19,7 +19,7 @@ class DataMahasiswa extends CI_Controller
 	public function json()
 	{
 		$this->load->library('datatables');
-		$this->datatables->select('*');
+		$this->datatables->select('id, nim, nama_mahasiswa, absen, suara');
 		$this->datatables->from('tb_mahasiswa');
 		return print_r($this->datatables->generate());
 	}

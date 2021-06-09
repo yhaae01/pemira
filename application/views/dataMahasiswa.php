@@ -39,7 +39,7 @@
         } ?>
 
         <div class="clearfix">
-            <table class="table table-striped table-bordered dataku">
+            <table id="mytable" class="table table-striped table-bordered dataku">
                 <thead style="text-align:center">
                     <tr>
                         <th>No</th>
@@ -47,126 +47,18 @@
                         <th>Nama Mahasiswa</th>
                         <th>Absen</th>
                         <th>Suara</th>
-                        <th width="150">
+                        <!-- <th width="150">
                             Aksi
-                        </th>
+                        </th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1;
-                    foreach ($data->result_array() as $i) :
-                        $id = $i['id'];
-                        $nim = $i['nim'];
-                        $nama_mahasiswa = $i['nama_mahasiswa'];
-                        $password = $i['password'];
-                        $suara = $i['suara'];
-                        $absen = $i['absen'];
-                    ?>
-                        <tr>
-                            <td style="text-align: center;"><?= "$no" ?></td>
-                            <td><?= $nim; ?> </td>
-                            <td><?= strtoupper($nama_mahasiswa); ?> </td>
-                            <td style="text-align: center;"><?php
-                                                            if ($absen == '0') {
-                                                            ?>
-                                    <span class="badge badge-warning">Belum Absen</span>
-                                <?php
-                                                            } else {
-                                ?>
-                                    <span class="badge badge-success">Telah Absen</span>
-                                <?php
-                                                            };
-                                ?>
-                            </td>
-                            <td style="text-align: center;"><?php
-                                                            if ($suara == '0') {
-                                                            ?>
-                                    <span class="badge badge-warning">Belum Memilih</span>
-                                <?php
-                                                            } else {
-                                ?>
-                                    <span class="badge badge-success">Telah Memilih</span>
-                                <?php
-                                                            };
-                                ?>
-                            </td>
-                            <td>
-                                <a class="badge badge-success" data-toggle="modal" data-target="#editdata<?= $id; ?>" href=""><i class="fa fa-pencil"></i> Ubah</a>
-                                <a class="badge badge-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash"></i> Hapus</a>
-                            </td>
-                        </tr>
-                        <!--Modal delete -->
-                        <div class="modal fade" id="delete<?= $i['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticModalLabel">Konfirmasi
-                                            <hr>
-                                            Apakah anda ingin hapus mahasiswa <b><?= ucwords($nama_mahasiswa); ?></b> ?
-                                        </h5>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                                        <form action="<?= base_url('DataMahasiswa/delete/' . $id); ?>">
-                                            <input type="submit" class="btn btn-primary" value="Ya">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal delete -->
 
-                        <!--Modal Edit-->
-                        <div class="modal fade" id="editdata<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="smallmodalLabel"></h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                        <h2><i class="fa fa-pencil"></i>&nbsp; Mahasiswa</h2>
-                                    </div>
-
-                                    <form action="<?= base_url('DataMahasiswa/edit/' . $id); ?>" method="post">
-                                        <div class="modal-body">
-
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">nim</label></div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="nim" name="nim" placeholder="nim . . ." class="form-control" readonly value="<?= $nim; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Passowrd</label></div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="password" id="password" name="password" placeholder="nim . . ." readonly class="form-control" value="<?= $password; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Mahasiswa</label></div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="text" id="nama_mahasiswa" name="nama_mahasiswa" placeholder="Nama . . ." class="form-control" value="<?= $nama_mahasiswa; ?>">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                            <input type="submit" value="Ubah" class="btn btn-primary">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal Edit-->
-                    <?php $no++;
-                    endforeach; ?>
                 </tbody>
             </table>
         </div>
 
-        <!--Modal tambah-->
+        <!-- Modal tambah -->
         <div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -209,7 +101,7 @@
             </div>
         </div>
 
-        <div class="clearfix"></div>
+        <div class="clearfix"></div> -->
 
         <!--Modal truncate -->
         <div class="modal fade" id="truncate" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
@@ -233,7 +125,7 @@
         </div>
         <!--End Modal truncate -->
 
-        <!--Modal absen -->
+        <!-- Modal absen -->
         <div class="modal fade" id="absen" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -251,7 +143,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--End Modal absen -->
 
         <!--Modal batal absen -->

@@ -44,11 +44,6 @@
     <script src="<?= base_url(); ?>assets/datatable/js/jquery.js"></script>
     <script src="<?= base_url(); ?>assets/datatable/js/jquery.dataTables.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.dataku').DataTable();
-        });
-    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -56,12 +51,16 @@
                 "serverSide": true,
                 "processing": true,
                 "ajax": {
-                    url: "<?php echo base_url("DataMahasiswa/json") ?>",
+                    url: "<?= base_url("DataMahasiswa/json") ?>",
                     type: 'post',
                     dataType: 'json'
                 },
                 "columns": [{
-                        data: "id"
+                        data: "id",
+                        class: "text-center",
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
                     },
                     {
                         data: "nim"
@@ -70,10 +69,26 @@
                         data: "nama_mahasiswa"
                     },
                     {
-                        data: "absen"
+                        data: "absen",
+                        class: "text-center",
+                        render: function(dataAbsen) {
+                            if (dataAbsen == '0') {
+                                return '<span class="badge badge-warning">Belum Absen</span>'
+                            } else {
+                                return '<span class="badge badge-success">Telah Absen</span>'
+                            }
+                        }
                     },
                     {
-                        data: "suara"
+                        data: "suara",
+                        class: "text-center",
+                        render: function(dataSuara) {
+                            if (dataSuara == '0') {
+                                return '<span class="badge badge-warning">Belum Memilih</span>'
+                            } else {
+                                return '<span class="badge badge-success">Telah Memilih</span>'
+                            }
+                        }
                     }
                 ]
             });
