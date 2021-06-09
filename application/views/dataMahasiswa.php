@@ -47,9 +47,6 @@
                         <th>Nama Mahasiswa</th>
                         <th>Absen</th>
                         <th>Suara</th>
-                        <!-- <th width="150">
-                            Aksi
-                        </th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -101,7 +98,7 @@
             </div>
         </div>
 
-        <div class="clearfix"></div> -->
+        <div class="clearfix"></div>
 
         <!--Modal truncate -->
         <div class="modal fade" id="truncate" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
@@ -143,7 +140,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!--End Modal absen -->
 
         <!--Modal batal absen -->
