@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 08 Jun 2021 pada 07.29
+-- Waktu pembuatan: 09 Jun 2021 pada 20.27
 -- Versi server: 5.7.24
 -- Versi PHP: 7.2.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `epemilos`
+-- Database: `pemira`
 --
 
 -- --------------------------------------------------------
