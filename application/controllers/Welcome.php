@@ -40,7 +40,7 @@ class Welcome extends CI_Controller
 
 			$this->session->set_userdata($data_session);
 
-			redirect(base_url("Dasbor"));
+			redirect(base_url("Dashboard"));
 		} else if ($cek2 > 0) {
 
 			$hasil = $this->db->query("SELECT *  FROM tb_mahasiswa where nim='$username'");

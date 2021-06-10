@@ -1,13 +1,13 @@
 <?php
 $sec = "10";
 ?>
-<meta http-equiv="refresh" content="<?php echo $sec ?>;URL='<?= base_url('Dasbor') ?>'">
+<meta http-equiv="refresh" content="<?php echo $sec ?>;URL='<?= base_url('Dashboard') ?>'">
 
 <div class="content pb-0">
 
     <h1><i class="fa fa-bar-chart-o"> </i> Hasil Pemilihan</h1>
     <hr>
-    <a class="btn btn-success mb-3" href="<?php echo base_url('dasbor/export'); ?>"><i class="fa fa-print">
+    <a class="btn btn-success mb-3" href="<?php echo base_url('Dashboard/export'); ?>"><i class="fa fa-print">
         </i> Cetak</a>
 
     <?php

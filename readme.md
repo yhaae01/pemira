@@ -1,19 +1,11 @@
-# Program E-Pemilos
+# Program Pemira
 
-Program E-Pemilos ini dibuat menggunakan Codeigniter 3 dan Bootstrap.
+Program Pemira ini dibuat untuk melakukan Pemilihan Raya Mahasiswa (Pemira) UBSI Bogor, dibuat menggunakan Codeigniter 3 dan Bootstrap.
 
 ## Spesifikasi Minimum
 
 - PHP >= 5.3.7
 - Google Chrome >= 89.0.4389.114
-
-## User Access
-
-1. Admin
-
-   NIM : admin
-
-   Password : 111
 
 ## Cara Menggunakan
 
