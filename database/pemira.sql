@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 09 Jun 2021 pada 20.27
+-- Waktu pembuatan: 10 Jun 2021 pada 22.47
 -- Versi server: 5.7.24
 -- Versi PHP: 7.2.19
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` varchar(255) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-('1', 'admin', '111');
+('1', 'admin', '5f663f20897a4215f69abff2055368c6');
 
 -- --------------------------------------------------------
 
@@ -1319,27 +1319,91 @@ INSERT INTO `tb_mahasiswa` (`id`, `nim`, `password`, `nama_mahasiswa`, `absen`, 
 (1227, 12185103, '12185103', 'SITI NURSYAMSIAH', 0, 0),
 (1228, 12185140, '12185140', 'KHAERUL AJHAR', 0, 0),
 (1229, 12185171, '12185171', 'HENDRIK', 0, 0),
-(1230, 12185218, '12185218', 'ADAM AGUNG', 0, 0);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tb_pengawas`
---
-
-CREATE TABLE `tb_pengawas` (
-  `id` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `namapengawas` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_pengawas`
---
-
-INSERT INTO `tb_pengawas` (`id`, `username`, `password`, `namapengawas`) VALUES
-('5c91075cc2', 'fariz', '12', 'Fariz Andifa');
+(1230, 12185218, '12185218', 'ADAM AGUNG', 0, 0),
+(1231, NULL, NULL, NULL, 0, 0),
+(1232, NULL, NULL, NULL, 0, 0),
+(1233, NULL, NULL, NULL, 0, 0),
+(1234, NULL, NULL, NULL, 0, 0),
+(1235, NULL, NULL, NULL, 0, 0),
+(1236, NULL, NULL, NULL, 0, 0),
+(1237, NULL, NULL, NULL, 0, 0),
+(1238, NULL, NULL, NULL, 0, 0),
+(1239, NULL, NULL, NULL, 0, 0),
+(1240, NULL, NULL, NULL, 0, 0),
+(1241, NULL, NULL, NULL, 0, 0),
+(1242, NULL, NULL, NULL, 0, 0),
+(1243, NULL, NULL, NULL, 0, 0),
+(1244, NULL, NULL, NULL, 0, 0),
+(1245, NULL, NULL, NULL, 0, 0),
+(1246, NULL, NULL, NULL, 0, 0),
+(1247, NULL, NULL, NULL, 0, 0),
+(1248, NULL, NULL, NULL, 0, 0),
+(1249, NULL, NULL, NULL, 0, 0),
+(1250, NULL, NULL, NULL, 0, 0),
+(1251, NULL, NULL, NULL, 0, 0),
+(1252, NULL, NULL, NULL, 0, 0),
+(1253, NULL, NULL, NULL, 0, 0),
+(1254, NULL, NULL, NULL, 0, 0),
+(1255, NULL, NULL, NULL, 0, 0),
+(1256, NULL, NULL, NULL, 0, 0),
+(1257, NULL, NULL, NULL, 0, 0),
+(1258, NULL, NULL, NULL, 0, 0),
+(1259, NULL, NULL, NULL, 0, 0),
+(1260, NULL, NULL, NULL, 0, 0),
+(1261, NULL, NULL, NULL, 0, 0),
+(1262, NULL, NULL, NULL, 0, 0),
+(1263, NULL, NULL, NULL, 0, 0),
+(1264, NULL, NULL, NULL, 0, 0),
+(1265, NULL, NULL, NULL, 0, 0),
+(1266, NULL, NULL, NULL, 0, 0),
+(1267, NULL, NULL, NULL, 0, 0),
+(1268, NULL, NULL, NULL, 0, 0),
+(1269, NULL, NULL, NULL, 0, 0),
+(1270, NULL, NULL, NULL, 0, 0),
+(1271, NULL, NULL, NULL, 0, 0),
+(1272, NULL, NULL, NULL, 0, 0),
+(1273, NULL, NULL, NULL, 0, 0),
+(1274, NULL, NULL, NULL, 0, 0),
+(1275, NULL, NULL, NULL, 0, 0),
+(1276, NULL, NULL, NULL, 0, 0),
+(1277, NULL, NULL, NULL, 0, 0),
+(1278, NULL, NULL, NULL, 0, 0),
+(1279, NULL, NULL, NULL, 0, 0),
+(1280, NULL, NULL, NULL, 0, 0),
+(1281, NULL, NULL, NULL, 0, 0),
+(1282, NULL, NULL, NULL, 0, 0),
+(1283, NULL, NULL, NULL, 0, 0),
+(1284, NULL, NULL, NULL, 0, 0),
+(1285, NULL, NULL, NULL, 0, 0),
+(1286, NULL, NULL, NULL, 0, 0),
+(1287, NULL, NULL, NULL, 0, 0),
+(1288, NULL, NULL, NULL, 0, 0),
+(1289, NULL, NULL, NULL, 0, 0),
+(1290, NULL, NULL, NULL, 0, 0),
+(1291, NULL, NULL, NULL, 0, 0),
+(1292, NULL, NULL, NULL, 0, 0),
+(1293, NULL, NULL, NULL, 0, 0),
+(1294, NULL, NULL, NULL, 0, 0),
+(1295, NULL, NULL, NULL, 0, 0),
+(1296, NULL, NULL, NULL, 0, 0),
+(1297, NULL, NULL, NULL, 0, 0),
+(1298, NULL, NULL, NULL, 0, 0),
+(1299, NULL, NULL, NULL, 0, 0),
+(1300, NULL, NULL, NULL, 0, 0),
+(1301, NULL, NULL, NULL, 0, 0),
+(1302, NULL, NULL, NULL, 0, 0),
+(1303, NULL, NULL, NULL, 0, 0),
+(1304, NULL, NULL, NULL, 0, 0),
+(1305, NULL, NULL, NULL, 0, 0),
+(1306, NULL, NULL, NULL, 0, 0),
+(1307, NULL, NULL, NULL, 0, 0),
+(1308, NULL, NULL, NULL, 0, 0),
+(1309, NULL, NULL, NULL, 0, 0),
+(1310, NULL, NULL, NULL, 0, 0),
+(1311, NULL, NULL, NULL, 0, 0),
+(1312, NULL, NULL, NULL, 0, 0),
+(1313, NULL, NULL, NULL, 0, 0),
+(1314, NULL, NULL, NULL, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -1365,12 +1429,6 @@ ALTER TABLE `tb_mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pengawas`
---
-ALTER TABLE `tb_pengawas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -1384,7 +1442,7 @@ ALTER TABLE `tb_calon`
 -- AUTO_INCREMENT untuk tabel `tb_mahasiswa`
 --
 ALTER TABLE `tb_mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1231;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1315;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
