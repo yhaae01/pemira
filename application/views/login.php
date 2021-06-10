@@ -35,15 +35,15 @@
                     <?php
                     if (isset($_GET['pesan'])) {
                         if ($_GET['pesan'] == "gagal") {
-                            echo "<div class='alert alert-danger'>Login gagal! Username dan password salah.</div>";
+                            echo "<div class='alert alert-danger'>Oops! NIM atau password salah.</div>";
                         } else if ($_GET['pesan'] == "logout") {
-                            echo "<div class='alert alert-danger'>Anda telah logout.</div>";
+                            echo "<div class='alert alert-danger'>Anda berhasil logout.</div>";
                         } else if ($_GET['pesan'] == "salah") {
-                            echo "<div class='alert alert-danger'>Anda tidak punya hak.</div>";
+                            echo "<div class='alert alert-danger'>Oops! Akses ditolak.</div>";
                         } else if ($_GET['pesan'] == "sudahmemilih") {
-                            echo "<div class='alert alert-danger'>Maaf anda tidak dapat login karena telah memilih.</div>";
+                            echo "<div class='alert alert-danger'>Oops! Gagal login karena sudah memilih.</div>";
                         } else if ($_GET['pesan'] == "belumabsen") {
-                            echo "<div class='alert alert-danger'>Maaf anda tidak dapat login. Silahkan absen terlebih dahulu.</div>";
+                            echo "<div class='alert alert-danger'>Oops! Absen belum dibuka.</div>";
                         } else if ($_GET['pesan'] == "terimakasih") {
                             echo "<div class='alert alert-success'>Terimakasih telah menggunakan hak pilih.</div>";
                         } else {

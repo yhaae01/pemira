@@ -20,16 +20,15 @@ class Welcome extends CI_Controller
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$where = array(
-			'username' => $username,
-			'password' => $password
+			'username' 	=> $username,
+			'password' 	=> md5($password)
 		);
 		$where2 = array(
-			'nim' => $username,
-			'password' =>  $password
+			'nim' 		=> $username,
+			'password' 	=>  $password
 		);
 		$cek = $this->M_login->cek_login("admin", $where)->num_rows();
 		$cek2 = $this->M_login->cek_login("tb_mahasiswa", $where2)->num_rows();
-		$cek3 = $this->M_login->cek_login("tb_pengawas", $where)->num_rows();
 		if ($cek > 0) {
 
 			$data_session = array(
@@ -63,18 +62,6 @@ class Welcome extends CI_Controller
 				} else {
 					redirect(base_url("?pesan=gagal"));
 				}
-			endforeach;
-		} else if ($cek3 > 0) {
-
-			$hasil2 = $this->db->query("SELECT *  FROM tb_pengawas where username='$username'");
-			foreach ($hasil2->result_array() as $i2) :
-				$data_session = array(
-					'id' => $i2['id'],
-					'nama' => $i2['namapengawas'],
-					'status' => "loginpengawas"
-				);
-				$this->session->set_userdata($data_session);
-				redirect(base_url("Pengawas"));
 			endforeach;
 		} else {
 			redirect(base_url('?pesan=gagal'));
