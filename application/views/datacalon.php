@@ -64,10 +64,10 @@
                         $totalsuara = $i['totalsuara'];
                     ?>
                         <tr>
-                            <td><?= "$no" ?></td>
+                            <td style="text-align: center;"><?= "$no" ?></td>
                             <td><?= ucwords($namacalon); ?> </td>
-                            <td><img src="<?= base_url('assets/img/calon/' . $foto) ?>" width="64"> </td>
-                            <td><?= $totalsuara; ?> </td>
+                            <td style="text-align: center;"><img src="<?= base_url('assets/img/calon/' . $foto) ?>" width="64"> </td>
+                            <td style="text-align: center;"><?= $totalsuara; ?> </td>
                             <td>
                                 <a class="badge badge-success" data-toggle="modal" data-target="#editdata<?= $id; ?>" href=""><i class="fa fa-pencil"></i> Ubah</a>
                                 <a class="badge badge-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash-o"></i> Hapus</a>
