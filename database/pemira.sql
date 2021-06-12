@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 12 Jun 2021 pada 21.28
+-- Waktu pembuatan: 12 Jun 2021 pada 22.23
 -- Versi server: 5.7.24
 -- Versi PHP: 7.2.19
 
@@ -1054,7 +1054,7 @@ INSERT INTO `tb_mahasiswa` (`id`, `nim`, `password`, `nama_mahasiswa`, `absen`, 
 (970, 12181995, 'pemira-2021', 'RISVIKA ANANDA', 0, 0),
 (971, 12182006, 'pemira-2021', 'RIVALINO AKBAR', 0, 0),
 (972, 12182023, 'pemira-2021', 'RIZKA FEBRIANI', 0, 0),
-(973, 12180308, 'pemira-2021', 'SURYA INTAN', 0, 13),
+(973, 12180308, 'pemira-2021', 'SURYA INTAN', 0, 0),
 (974, 12180310, 'pemira-2021', 'AHMAD MAULANA', 0, 0),
 (975, 12180962, 'pemira-2021', 'SAKTI SUDIRMAN', 0, 0),
 (976, 12181315, 'pemira-2021', 'ADINDA N.', 0, 0),
