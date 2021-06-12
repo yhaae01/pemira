@@ -14,6 +14,7 @@
                 <?= $this->session->flashdata('message'); ?>
 
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata"><i class="fa fa-plus-circle"></i>&nbsp; Tambah</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#truncate"><i class="fa fa-trash"></i>&nbsp; Kosongkan</button>
             </div>
         </div>
         <hr>
@@ -181,6 +182,28 @@
             </div>
         </div>
         <!-- End Modal tambah -->
+
+        <!--Modal truncate -->
+        <div class="modal fade" id="truncate" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="staticModalLabel">Konfirmasi</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Jika Anda menghapus semua data Calon maka hasil Pemilihan juga akan direset... </p>
+                        <p>Apakah anda yakin ingin menghapus semua data Calon ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                        <form action="<?= base_url('DataCalon/truncate') ?>">
+                            <input type="submit" class="btn btn-primary" value="Ya">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Modal truncate -->
 
         <script type="text/javascript" src="assets/js/ckeditor/ckeditor.js"></script>
         <script type="text/javascript">

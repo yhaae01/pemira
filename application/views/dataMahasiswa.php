@@ -113,7 +113,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                        <form action="<?= base_url('index.php/DataMahasiswa/hapussemua') ?>">
+                        <form action="<?= base_url('DataMahasiswa/truncate') ?>">
                             <input type="submit" class="btn btn-primary" value="Ya">
                         </form>
                     </div>

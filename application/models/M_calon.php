@@ -55,6 +55,24 @@ class M_calon extends CI_Model
 		redirect('DataCalon');
 	}
 
+	public function truncate()
+	{
+		$this->db->query('TRUNCATE TABLE tb_calon');
+
+		$files = glob('assets/img/calon/*'); // get all file names
+		foreach ($files as $file) { // iterate files
+			if (is_file($file)) {
+				unlink($file); // delete file
+			}
+		}
+
+		if ($this->db->affected_rows() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public function deletecalon($id)
 	{
 		$hasil = $this->db->query("SELECT * FROM tb_mahasiswa");

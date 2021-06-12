@@ -72,6 +72,12 @@ class DataCalon extends CI_Controller
 		}
 	}
 
+	public function truncate()
+	{
+		$result = $this->mc->truncate();
+		redirect(base_url('DataCalon'));
+	}
+
 	public function edit()
 	{
 		$id = $this->input->post('id');
