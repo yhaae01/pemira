@@ -90,11 +90,11 @@
         <?php
         $no = 1;
         foreach ($data->result_array() as $i) :
-            $id = $i['id'];
-            $visi = $i['visi'];
-            $misi = $i['misi'];
+            $id     = $i['id'];
+            $visi   = $i['visi'];
+            $misi   = $i['misi'];
             $proker = $i['proker'];
-            $foto = $i['foto'];
+            $foto   = $i['foto'];
         ?>
             <div class="modal fade" id="visimisi<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -156,9 +156,9 @@
         <?php
         $no = 1;
         foreach ($data->result_array() as $i) :
-            $id = $i['id'];
-            $namacalon = $i['namacalon'];
-            $foto = $i['foto'];
+            $id         = $i['id'];
+            $namacalon  = $i['namacalon'];
+            $foto       = $i['foto'];
         ?>
             <div class="modal fade" id="pilih<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -201,13 +201,14 @@
         <?php
         $no = 1;
         foreach ($data->result_array() as $i) :
-            $id = $i['id'];
-            $nim = $i['nim'];
-            $namacalon = $i['namacalon'];
-            $jurusan = $i['jurusan'];
-            $foto = $i['foto'];
+            $id         = $i['id'];
+            $nim        = $i['nim'];
+            $namacalon  = $i['namacalon'];
+            $jurusan    = $i['jurusan'];
+            $foto       = $i['foto'];
             $asalkampus = $i['asalkampus'];
-            $riwayat = $i['riwayat'];
+            $riwayat    = $i['riwayat'];
+            $link       = $i['link'];
         ?>
             <div class="modal fade" id="biodata<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -246,6 +247,12 @@
                                                 <h4>Riwayat Organisasi :</h4>
                                                 <hr>
                                                 <p><?= $riwayat; ?></p>
+                                            </div>
+                                            <hr>
+                                            <div class="box">
+                                                <h4>Link Video Kampanye :</h4>
+                                                <hr>
+                                                <p>Klik link <a href="<?= $link; ?>" target="_blank" rel="noopener noreferrer" style="color: blue; text-decoration: underline;">berikut</a></p>
                                             </div>
                                         </div>
                                     </div>

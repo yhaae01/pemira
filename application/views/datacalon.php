@@ -54,12 +54,6 @@
                         $id         = $i['id'];
                         $nim        = $i['nim'];
                         $namacalon  = $i['namacalon'];
-                        $jurusan    = $i['jurusan'];
-                        $asalkampus = $i['asalkampus'];
-                        $riwayat    = $i['riwayat'];
-                        $proker     = $i['proker'];
-                        $visi       = $i['visi'];
-                        $misi       = $i['misi'];
                         $foto       = $i['foto'];
                         $totalsuara = $i['totalsuara'];
                     ?>
@@ -69,7 +63,6 @@
                             <td style="text-align: center;"><img src="<?= base_url('assets/img/calon/' . $foto) ?>" width="64"> </td>
                             <td style="text-align: center;"><?= $totalsuara; ?> </td>
                             <td style="text-align: center;">
-                                <!-- <a class="badge badge-success" data-toggle="modal" data-target="#editdata<?= $id; ?>" href=""><i class="fa fa-pencil"></i> Ubah</a> -->
                                 <a class="badge badge-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash-o"></i> Hapus</a>
                             </td>
                         </tr>
@@ -93,91 +86,6 @@
                             </div>
                         </div>
                         <!-- End Modal delete -->
-
-                        <!--Modal Edit-->
-                        <div class="modal fade" id="editdata<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="smallmodalLabel"></h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                        <h2><i class="fa fa-pencil"></i>&nbsp; Data Calon</h2>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <?= form_open_multipart('DataCalon/edit/' . $id); ?>
-                                        <input type="hidden" name="id" value="<?= $id; ?>">
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>
-                                            <div class="col-12">
-                                                <input type="number" id="nim" name="nim" placeholder="NIM . . ." class="form-control" maxlength="8" value="<?= $nim; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Nama</label></b></div>
-                                            <div class="col-12">
-                                                <input type="text" id="namacalon" name="namacalon" placeholder="Nama Calon" class="form-control" value="<?= $namacalon; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Jurusan</label></b></div>
-                                            <div class="col-12">
-                                                <input type="text" id="jurusan" name="jurusan" placeholder="Jurusan . . ." class="form-control" value="<?= $jurusan; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Asal Kampus</label></b></div>
-                                            <div class="col-12">
-                                                <input type="text" id="asalkampus" name="asalkampus" placeholder="Asal Kampus . . ." class="form-control" value="<?= $asalkampus; ?>">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Riwayat Organisasi</label></b></div>
-                                            <div class="col-12">
-                                                <textarea class="form-control" id="riwayatedit" name="riwayat" rows="6" cols="50"><?= $riwayat ?></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-4"><b><label for="disabled-input" class=" form-control-label">Program Kerja Unggulan</label></b></div>
-                                            <div class="col-12">
-                                                <textarea class="form-control" id="prokeredit" name="proker" rows="6" cols="50"><?= $proker ?></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Visi</label></b></div>
-                                            <div class="col-12">
-                                                <textarea class="form-control" id="visiedit" name="visi" rows="6" cols="50"><?= $visi ?></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Misi</label></b></div>
-                                            <div class="col-12">
-                                                <textarea class="form-control" id="misiedit" name="misi" rows="6" cols="50"><?= $misi ?></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <b><label for="name">Foto</label></b>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="custom-file">
-                                                    <input class="custom-file-input" type="file" name="upfoto" id="upfoto" />
-                                                    <label class="custom-file-label">Pilih gambar...</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                        <input type="submit" value="Ubah" class="btn btn-primary">
-                                    </div>
-                                    <?= form_close() ?>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal Edit -->
                     <?php $no++;
                     endforeach; ?>
                 </tbody>
@@ -247,6 +155,12 @@
                             </div>
                         </div>
                         <div class="row form-group">
+                            <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">Link Video</label></b></div>
+                            <div class="col-12">
+                                <input type="text" id="link" name="link" placeholder="Link Video . . ." class="form-control">
+                            </div>
+                        </div>
+                        <div class="row form-group">
                             <div class="col col-md-3">
                                 <b><label for="name">Foto</label></b>
                             </div>
@@ -266,16 +180,12 @@
                 </div>
             </div>
         </div>
+        <!-- End Modal tambah -->
 
         <script type="text/javascript" src="assets/js/ckeditor/ckeditor.js"></script>
-
         <script type="text/javascript">
             CKEDITOR.replace('editor1');
             CKEDITOR.replace('editor2');
             CKEDITOR.replace('visi');
             CKEDITOR.replace('misi');
-            CKEDITOR.replace('visiedit');
-            CKEDITOR.replace('misiedit');
-            CKEDITOR.replace('riwayatedit');
-            CKEDITOR.replace('prokeredit');
         </script>

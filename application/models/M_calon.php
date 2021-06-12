@@ -34,15 +34,16 @@ class M_calon extends CI_Model
 		$post = $this->input->post();
 		$gambar = $this->upload->data();
 
-		$this->nim = $post["nim"];
-		$this->namacalon = $post["namacalon"];
-		$this->jurusan = $post["jurusan"];
-		$this->asalkampus = $post["asalkampus"];
-		$this->riwayat = $post["riwayat"];
-		$this->proker = $post["proker"];
-		$this->visi = $post["visi"];
-		$this->misi = $post["misi"];
-		$this->foto = $gambar['file_name'];
+		$this->nim 			= $post["nim"];
+		$this->namacalon 	= $post["namacalon"];
+		$this->jurusan 		= $post["jurusan"];
+		$this->asalkampus 	= $post["asalkampus"];
+		$this->riwayat 		= $post["riwayat"];
+		$this->proker 		= $post["proker"];
+		$this->visi 		= $post["visi"];
+		$this->misi 		= $post["misi"];
+		$this->link 		= $post["link"];
+		$this->foto 		= $gambar['file_name'];
 
 		$this->session->set_flashdata(
 			'message',
@@ -51,38 +52,6 @@ class M_calon extends CI_Model
         </div>'
 		);
 		$this->db->insert('tb_calon', $this);
-		redirect('DataCalon');
-	}
-
-	public function editcalon()
-	{
-		$id         = $this->input->post('id');
-		$namacalon  = $this->input->post('namacalon');
-		$jurusan   	= $this->input->post('jurusan');
-		$asalkampus = $this->input->post('asalkampus');
-		$riwayat  	= $this->input->post('riwayat');
-		$proker  	= $this->input->post('proker');
-		$visi   	= $this->input->post('visi');
-		$misi   	= $this->input->post('misi');
-		$foto		= $this->_uploadImage();
-
-		$this->db->set('namacalon', $namacalon);
-		$this->db->set('jurusan', $jurusan);
-		$this->db->set('asalkampus', $asalkampus);
-		$this->db->set('riwayat', $riwayat);
-		$this->db->set('proker', $proker);
-		$this->db->set('visi', $visi);
-		$this->db->set('misi', $misi);
-		$this->db->set('foto', $foto);
-		$this->db->where('id', $id);
-		$this->db->update('tb_calon');
-
-		$this->session->set_flashdata(
-			'message',
-			'<div class="alert alert-success" role="alert">
-        Berhasil diubah!
-        </div>'
-		);
 		redirect('DataCalon');
 	}
 
