@@ -121,11 +121,11 @@ class M_calon extends CI_Model
 			$this->db->query("UPDATE tb_calon set totalsuara='$k' where id='$id'");
 		endforeach;
 
-		$loginnis = $this->session->userdata('nis');
+		$loginnis = $this->session->userdata('nim');
 		$field2 = array(
 			'suara' => $id
 		);
-		$this->db->where('nis', $loginnis);
+		$this->db->where('nim', $loginnis);
 		$this->db->update('tb_mahasiswa', $field2);
 
 		if ($this->db->affected_rows() > 0) {

@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
 
-    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
-    <link rel="shortcut icon" href="assets/img/bem-logo.png">
+    <link rel="apple-touch-icon" href="<?= base_url(); ?>assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/bem-logo.png">
 
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/datatable/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/datatable/css/bootstrap.css">
 
 </head>
 
@@ -21,8 +21,6 @@
     <?php
     $login = $this->session->userdata('status');
     if ($login == 'loginadmin') {
-        redirect(base_url('?pesan=salah'));
-    } else if ($login == 'loginpengawas') {
         redirect(base_url('?pesan=salah'));
     } else if ($login == 'loginsiswa') {
     } else {
@@ -58,7 +56,7 @@
                 <div class="col-lg-4 col-md-12 col-xs-12">
                     <aside class="profile-nav alt">
                         <section class="card">
-                            <form action="<?= base_url('index.php/form/pilih/' . $id . ''); ?>">
+                            <form action="<?= base_url('form/pilih/' . $id . ''); ?>">
                                 <div class="card-header user-header alt bg-dark">
                                     <div class="media">
                                         <h3 class="text-light display-6"><?= $no . '. ' . strtoupper($namacalon); ?></h3>
@@ -95,9 +93,8 @@
             $id = $i['id'];
             $visi = $i['visi'];
             $misi = $i['misi'];
-            $namacalon = $i['namacalon'];
+            $proker = $i['proker'];
             $foto = $i['foto'];
-            $totalsuara = $i['totalsuara'];
         ?>
             <div class="modal fade" id="visimisi<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -160,16 +157,13 @@
         $no = 1;
         foreach ($data->result_array() as $i) :
             $id = $i['id'];
-            $visi = $i['visi'];
-            $misi = $i['misi'];
             $namacalon = $i['namacalon'];
             $foto = $i['foto'];
-            $totalsuara = $i['totalsuara'];
         ?>
             <div class="modal fade" id="pilih<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <form action="<?= base_url('index.php/form/pilih/' . $id); ?>" method="post">
+                        <form action="<?= base_url('form/pilih/' . $id); ?>" method="post">
                             <div class="modal-body">
 
                                 <div class="card-header user-header alt bg-dark">
@@ -207,12 +201,13 @@
         <?php
         $no = 1;
         foreach ($data->result_array() as $i) :
+            $id = $i['id'];
             $nim = $i['nim'];
             $namacalon = $i['namacalon'];
             $jurusan = $i['jurusan'];
+            $foto = $i['foto'];
             $asalkampus = $i['asalkampus'];
             $riwayat = $i['riwayat'];
-            $proker = $i['proker'];
         ?>
             <div class="modal fade" id="biodata<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -276,11 +271,10 @@
     </div> <!-- .content -->
     </div><!-- /#right-panel -->
 
-
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?= base_url(); ?>assets/js/jquery-3.5.1.min.js"></script>
+    <script src="<?= base_url(); ?>assets/js/popper.min.js"></script>
+    <script src="<?= base_url(); ?>assets/js/plugins.js"></script>
+    <script src="<?= base_url(); ?>assets/js/main.js"></script>
 </body>
 
 </html>
