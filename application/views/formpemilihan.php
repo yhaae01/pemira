@@ -187,7 +187,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-success btn-lg btn-block" value="Pilih">
+                                <input type="submit" class="btn btn-success btn-lg btn-block" value="Ya, Vote!">
                             </div>
                         </form>
                     </div>
