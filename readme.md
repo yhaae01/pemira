@@ -9,16 +9,16 @@ Program Pemira ini dibuat untuk melakukan Pemilihan Raya Mahasiswa (Pemira) UBSI
 
 ## Cara Menggunakan
 
-1. Letakan folder e-pemilos ke dalam direktori
+1. Letakan folder pemira ke dalam direktori
 
    > _C:/xampp/htdocs_ (Windows)
 
    > /opt/lampp/www/ (Linux)
 
-2. Jalankan Apache Server agar bisa membuka aplikasi E-Pemilos.
+2. Jalankan Apache Server agar bisa membuka aplikasi Pemira.
 3. Buka Browser lalu ketikan
-   > _localhost/e-pemilos_
-4. Masuk sebagai admin lalu masuk ke <b>data pemilih</b> lalu tekan <b>absen</b> agar siswa/peserta bisa login untuk memilih.
+   > _localhost/pemira_
+4. Masuk sebagai admin lalu masuk ke <b>data pemilih</b> lalu tekan <b>absen</b> agar mahasiswa/DPT bisa login ke halaman pemilihan untuk memilih.
 
 ## Credits
 
