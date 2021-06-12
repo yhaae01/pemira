@@ -239,9 +239,16 @@
                                 <textarea class="form-control" id="misi" name="misi" rows="10" cols="80"></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <b><label for="name">Foto</label></b>
-                            <input class="form-control-file" type="file" name="upfoto" id="upfoto" />
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <b><label for="name">Foto</label></b>
+                            </div>
+                            <div class="col-12">
+                                <div class="custom-file">
+                                    <input class="custom-file-input" type="file" name="upfoto" id="upfoto" />
+                                    <label class="custom-file-label">Pilih gambar...</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">

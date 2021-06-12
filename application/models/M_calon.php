@@ -13,7 +13,6 @@ class M_calon extends CI_Model
 		$nama 						= 'calon_' . time();
 		$config['upload_path']      = './assets/img/calon/';
 		$config['allowed_types']    = 'gif|jpg|png';
-		$config['file_name']        = $this->id;
 		$config['overwrite']		= true;
 		$config['file_name'] 		= $nama;
 
@@ -35,6 +34,7 @@ class M_calon extends CI_Model
 	function insert_data()
 	{
 		$post = $this->input->post();
+		$gambar = $this->upload->data();
 
 		$this->nim = $post["nim"];
 		$this->namacalon = $post["namacalon"];
@@ -44,7 +44,7 @@ class M_calon extends CI_Model
 		$this->proker = $post["proker"];
 		$this->visi = $post["visi"];
 		$this->misi = $post["misi"];
-		$this->foto = $this->_uploadImage();
+		$this->foto = $gambar['file_name'];
 
 		$this->session->set_flashdata(
 			'message',

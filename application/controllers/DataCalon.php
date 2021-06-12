@@ -40,6 +40,14 @@ class DataCalon extends CI_Controller
 			'required' => 'Misi tidak boleh kosong!'
 		]);
 
+		$nama 						= 'calon_' . time();
+		$config['upload_path']      = './assets/img/calon/';
+		$config['allowed_types']    = 'gif|jpg|png';
+		$config['overwrite']		= true;
+		$config['file_name'] 		= $nama;
+
+		$this->load->library('upload', $config);
+
 		if ($this->form_validation->run() == FALSE) {
 			$x['data'] = $this->mc->show_calon();
 
@@ -47,7 +55,17 @@ class DataCalon extends CI_Controller
 			$this->load->view('DataCalon', $x);
 			$this->load->view('templates/admin/footer');
 		} else {
-			$this->mc->insert_data();
+			if (!$this->upload->do_upload('upfoto')) {
+				$this->session->set_flashdata(
+					'message',
+					'<div class="alert alert-danger" role="alert">
+                    Oops! Terjadi suatu kesalahan.
+                    </div>'
+				);
+				redirect('DataCalon');
+			} else {
+				$this->mc->insert_data();
+			}
 		}
 	}
 
