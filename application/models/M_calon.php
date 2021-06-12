@@ -21,8 +21,6 @@ class M_calon extends CI_Model
 		if ($this->upload->do_upload('upfoto')) {
 			return $this->upload->data("file_name");
 		}
-
-		return "default.png";
 	}
 
 	function show_calon()

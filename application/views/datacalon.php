@@ -68,8 +68,8 @@
                             <td><?= ucwords($namacalon); ?> </td>
                             <td style="text-align: center;"><img src="<?= base_url('assets/img/calon/' . $foto) ?>" width="64"> </td>
                             <td style="text-align: center;"><?= $totalsuara; ?> </td>
-                            <td>
-                                <a class="badge badge-success" data-toggle="modal" data-target="#editdata<?= $id; ?>" href=""><i class="fa fa-pencil"></i> Ubah</a>
+                            <td style="text-align: center;">
+                                <!-- <a class="badge badge-success" data-toggle="modal" data-target="#editdata<?= $id; ?>" href=""><i class="fa fa-pencil"></i> Ubah</a> -->
                                 <a class="badge badge-danger" data-toggle="modal" data-target="#delete<?= $i['id']; ?>" href=""><i class="fa fa-trash-o"></i> Hapus</a>
                             </td>
                         </tr>
@@ -157,9 +157,16 @@
                                                 <textarea class="form-control" id="misiedit" name="misi" rows="6" cols="50"><?= $misi ?></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <b><label for="name">Foto</label></b>
-                                            <input class="form-control-file" type="file" name="upfoto" id="upfoto" />
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <b><label for="name">Foto</label></b>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="custom-file">
+                                                    <input class="custom-file-input" type="file" name="upfoto" id="upfoto" />
+                                                    <label class="custom-file-label">Pilih gambar...</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -194,7 +201,7 @@
                         <div class="row form-group">
                             <div class="col col-md-3"><b><label for="disabled-input" class=" form-control-label">NIM</label></b></div>
                             <div class="col-12">
-                                <input type="number" id="nim" name="nim" placeholder="NIM . . ." class="form-control" maxlength="8">
+                                <input type="text" id="nim" name="nim" placeholder="NIM . . ." class="form-control" maxlength="8">
                             </div>
                         </div>
                         <div class="row form-group">
