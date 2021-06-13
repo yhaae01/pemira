@@ -4,34 +4,30 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR | Login</title>
 
-    <link rel="apple-touch-icon" href="assets/img/bem-logo.png">
-    <link rel="shortcut icon" href="assets/img/bem-logo.png">
+    <link rel="apple-touch-icon" href="<?= base_url() ?>assets/img/bem-logo.png">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/img/bem-logo.png">
 
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
 
-<body class="bg-dark">
-    <div class="sufee-login d-flex align-content-center flex-wrap">
+<body style="background-color: #3498db;">
+    <div class="sufee-login d-flex align-content-center flex-wrap mt-4">
         <div class="container">
             <div class="login-content">
-
                 <div class="login-form">
                     <div class="login-logo">
-                        <a href="#">
-                            <img class="align-content" src="assets/img/logo.png" height="180">
-                            <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
-                        </a>
+                        <img class="align-content" src="<?= base_url() ?>assets/img/logo.png" height="180">
+                        <title>PEMILIHAN UMUM KETUA BEM UBSI BOGOR</title>
                     </div>
-                    <hr>
                     <?php
                     if (isset($_GET['pesan'])) {
                         if ($_GET['pesan'] == "gagal") {
@@ -51,7 +47,7 @@
                         }
                     }
                     ?>
-                    <form method="POST" action="<?php echo base_url('Welcome/aksi_login'); ?>">
+                    <form method="POST" action="<?= base_url('Welcome/aksi_login'); ?>">
                         <div class="form-group">
                             <input type="text" name="username" placeholder="NIM . . ." class="form-control" autocomplete="no">
                         </div>
@@ -67,10 +63,10 @@
         </div>
     </div>
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?= base_url() ?>assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/plugins.js"></script>
+    <script src="<?= base_url() ?>assets/js/main.js"></script>
 </body>
 
 </html>

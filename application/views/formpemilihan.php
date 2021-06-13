@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/datatable/css/bootstrap.css">
+    <style>
 
+    </style>
 </head>
 
 <body>
@@ -31,8 +33,8 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <div class="row">
-                    <div class="col-3"><img src="<?= base_url('assets/img/logo2.png'); ?>"></div>
-                    <div class="col-9 text-right"><b>Selamat Datang : <?= strtoupper($this->session->userdata('nama')); ?> </b><br>Silahkan pilih calon ketua BEM UBSI BOGOR dibawah ini...</div>
+                    <div class="col-3"><img src="<?= base_url('assets/img/logo.png'); ?>" height="150" width="150" style="margin-right: 700;" class="d-sm-none d-md-block d-none d-sm-block"></div>
+                    <div class="col-9 text-right"><b>Selamat Datang : <?= strtoupper($this->session->userdata('nama_mahasiswa')); ?> </b><br>Silahkan pilih calon ketua BEM UBSI BOGOR dibawah ini...</div>
                 </div>
             </li>
         </ol>
@@ -57,7 +59,7 @@
                     <aside class="profile-nav alt">
                         <section class="card">
                             <form action="<?= base_url('form/pilih/' . $id . ''); ?>">
-                                <div class="card-header user-header alt bg-dark">
+                                <div class="card-header user-header alt" style="background-color: #3498db;">
                                     <div class="media">
                                         <h3 class="text-light display-6"><?= $no . '. ' . strtoupper($namacalon); ?></h3>
                                     </div>
@@ -90,18 +92,19 @@
         <?php
         $no = 1;
         foreach ($data->result_array() as $i) :
-            $id     = $i['id'];
-            $visi   = $i['visi'];
-            $misi   = $i['misi'];
-            $proker = $i['proker'];
-            $foto   = $i['foto'];
+            $id         = $i['id'];
+            $namacalon  = $i['namacalon'];
+            $visi       = $i['visi'];
+            $misi       = $i['misi'];
+            $proker     = $i['proker'];
+            $foto       = $i['foto'];
         ?>
             <div class="modal fade" id="visimisi<?= $id; ?>" tabindex="-1" role="dialog" aria-labelledby="largemodalLabel" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
 
-                            <div class="card-header user-header alt bg-dark">
+                            <div class="card-header user-header alt" style="background-color: 3498db;">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
@@ -113,8 +116,8 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <div class="row">
-                                        <div class="col-md-12 col-lg-4 col-sm-12">
-                                            <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?= base_url('assets/img/calon/' . $foto) ?>">
+                                        <div class="col-md-12 col-lg-4 col-sm-12 text-center">
+                                            <img class="align-self-center mb-5" style="width:240px; height:300px;" src="<?= base_url('assets/img/calon/' . $foto) ?>">
                                         </div>
                                         <div class="col">
                                             </h1>
@@ -142,7 +145,6 @@
                         </div>
 
                         <div class="modal-footer">
-                            <!-- <input type="submit" class="btn btn-success btn-lg btn-block" value="Pilih"> -->
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         </div>
                     </div>
@@ -166,7 +168,7 @@
                         <form action="<?= base_url('form/pilih/' . $id); ?>" method="post">
                             <div class="modal-body">
 
-                                <div class="card-header user-header alt bg-dark">
+                                <div class="card-header user-header alt" style="background-color: 3498db;">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -215,7 +217,7 @@
                     <div class="modal-content">
                         <div class="modal-body">
 
-                            <div class="card-header user-header alt bg-dark">
+                            <div class="card-header user-header alt" style="background-color: 3498db;">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
@@ -227,8 +229,8 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <div class="row">
-                                        <div class="col-md-12 col-lg-4 col-sm-12">
-                                            <img class="align-self-center" style="width:240px; height:300px;" alt="" src="<?= base_url('assets/img/calon/' . $foto) ?>">
+                                        <div class="col-md-12 col-lg-4 col-sm-12 text-center">
+                                            <img class="align-self-center mb-5" style="width:240px; height:300px;" alt="" src="<?= base_url('assets/img/calon/' . $foto) ?>">
                                         </div>
                                         <div class="col">
                                             <div class="box">
