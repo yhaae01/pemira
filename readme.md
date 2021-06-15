@@ -22,4 +22,4 @@ Program Pemira ini dibuat untuk melakukan Pemilihan Raya Mahasiswa (Pemira) UBSI
 
 ## Credits
 
-Author: Surya Intan Permana
+Author: [Surya Intan Permana](https://www.linkedin.com/in/surya-intan-permana-b60766214/ "Linkedin Surya Intan Permana")
