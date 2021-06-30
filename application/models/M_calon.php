@@ -2,27 +2,6 @@
 
 class M_calon extends CI_Model
 {
-	public $id;
-	public $namacalon;
-	public $visi;
-	public $misi;
-	public $foto = "default.png";
-
-	private function _uploadImage()
-	{
-		$nama 						= 'calon_' . time();
-		$config['upload_path']      = './assets/img/calon/';
-		$config['allowed_types']    = 'gif|jpg|png';
-		$config['overwrite']		= true;
-		$config['file_name'] 		= $nama;
-
-		$this->load->library('upload', $config);
-
-		if ($this->upload->do_upload('upfoto')) {
-			return $this->upload->data("file_name");
-		}
-	}
-
 	function show_calon()
 	{
 		$hasil = $this->db->query("SELECT * FROM tb_calon");
