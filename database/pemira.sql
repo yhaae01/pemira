@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 12 Jun 2021 pada 22.23
+-- Waktu pembuatan: 30 Jun 2021 pada 11.56
 -- Versi server: 5.7.24
--- Versi PHP: 7.2.19
+-- Versi PHP: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,6 +60,13 @@ CREATE TABLE `tb_calon` (
   `link` text NOT NULL,
   `totalsuara` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_calon`
+--
+
+INSERT INTO `tb_calon` (`id`, `nim`, `namacalon`, `jurusan`, `asalkampus`, `riwayat`, `proker`, `visi`, `misi`, `foto`, `link`, `totalsuara`) VALUES
+(2, '12180308', 'surya intan permana', 'sistem informasi', 'bsi bogor', '<p>-</p>', '<p>-</p>', '<p>-</p>', '<p>-</p>', 'calon_1625054092.png', '-', 0);
 
 -- --------------------------------------------------------
 
@@ -1344,7 +1351,7 @@ ALTER TABLE `tb_mahasiswa`
 -- AUTO_INCREMENT untuk tabel `tb_calon`
 --
 ALTER TABLE `tb_calon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_mahasiswa`
