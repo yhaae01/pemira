@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('M_calon', 'mc');
-		$this->load->model('M_Mahasiswa', 'mm');
+		$this->load->model('M_mahasiswa', 'mm');
 	}
 
 	public function index()

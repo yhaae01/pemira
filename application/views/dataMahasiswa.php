@@ -75,12 +75,12 @@
                                     <input type="text" id="nim" name="nim" placeholder="NIM . . ." maxlength="8" class="form-control">
                                 </div>
                             </div>
-                            <div class="row form-group">
+                            <!-- <div class="row form-group">
                                 <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Password</label></div>
                                 <div class="col-12">
                                     <input type="password" id="password" name="password" placeholder="Password . . ." maxlength="8" class="form-control">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Nama Mahasiswa</label></div>
                                 <div class="col-12">

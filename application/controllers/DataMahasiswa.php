@@ -78,12 +78,11 @@ class DataMahasiswa extends CI_Controller
 
 	public function index()
 	{
-		$this->form_validation->set_rules('nim', 'NIM', 'trim|required|numeric|min_length[8]|is_unique[tb_mahasiswa.nim]|matches[password]', [
+		$this->form_validation->set_rules('nim', 'NIM', 'trim|required|numeric|min_length[8]|is_unique[tb_mahasiswa.nim]', [
 			'required' => 'NIM tidak boleh kosong!',
 			'min_length' => 'NIM minimal 8 karakter!',
 			'numeric' => 'Hanya bisa menggunakan angka!',
 			'is_unique' => 'NIM sudah digunakan!',
-			'matches' => 'NIM harus sama seperti Password!'
 		]);
 		// $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|matches[nim]', [
 		// 	'required' => 'Password tidak boleh kosong!',

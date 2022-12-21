@@ -55,7 +55,7 @@ class DataCalon extends CI_Controller
 			$x['data'] = $this->mc->show_calon();
 
 			$this->load->view('templates/admin/header');
-			$this->load->view('DataCalon', $x);
+			$this->load->view('datacalon', $x);
 			$this->load->view('templates/admin/footer');
 		} else {
 			if (!$this->upload->do_upload('upfoto')) {
@@ -65,7 +65,7 @@ class DataCalon extends CI_Controller
                     Oops! Terjadi suatu kesalahan.
                     </div>'
 				);
-				redirect('DataCalon');
+				redirect('datacalon');
 			} else {
 				$this->mc->insert_data();
 			}
@@ -75,7 +75,7 @@ class DataCalon extends CI_Controller
 	public function truncate()
 	{
 		$result = $this->mc->truncate();
-		redirect(base_url('DataCalon'));
+		redirect(base_url('datacalon'));
 	}
 
 	public function edit()
@@ -114,7 +114,7 @@ class DataCalon extends CI_Controller
 			$x['data'] = $this->mc->show_calon();
 
 			$this->load->view('templates/admin/header');
-			$this->load->view('DataCalon', $x);
+			$this->load->view('datacalon', $x);
 			$this->load->view('templates/admin/footer');
 		} else {
 			$this->mc->editcalon($id);
@@ -129,6 +129,6 @@ class DataCalon extends CI_Controller
 		} else {
 			$this->session->set_flashdata('error_msg', 'Gagal menghapus data');
 		}
-		redirect(base_url('DataCalon'));
+		redirect(base_url('datacalon'));
 	}
 }

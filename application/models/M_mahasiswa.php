@@ -13,7 +13,7 @@ class M_mahasiswa extends CI_Model
 	{
 		$field = [
 			'nim' => $this->input->post('nim'),
-			'password' => $this->input->post('password'),
+			'password' => 'pemira-2022',
 			'nama_mahasiswa' => $this->input->post('nama_mahasiswa'),
 			'suara' => '0',
 			'absen' => '0'
